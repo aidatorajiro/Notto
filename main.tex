@@ -1,0 +1,380 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{tikz-cd}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\newcounter{artCounter}
+\setcounter{artCounter}{0}
+\newcommand{\showArt}{{
+\ifnum \value{artCounter}=0
+\emojiA
+\fi
+\ifnum \value{artCounter}=1
+\emojiB
+\fi
+\ifnum \value{artCounter}=2
+\emojiC
+\fi
+\ifnum \value{artCounter}=3
+\comartSmileA
+\fi
+\ifnum \value{artCounter}=4
+\comartSmileB
+\fi
+\ifnum \value{artCounter}=5
+\comartSmileC
+\fi
+\ifnum \value{artCounter}=6
+\comartSmileD
+\fi
+\ifnum \value{artCounter}=7
+\comartSmileE
+\fi
+\addtocounter{artCounter}{1}
+\ifnum \value{artCounter}=8
+\setcounter{artCounter}{0}
+\fi
+}}
+
+\newcommand{\emojiA}{{
+$$ \langle \wedge \ \_\  \wedge \rangle $$
+}}
+
+\newcommand{\emojiB}{{
+$$ \langle Q\ _\perp\ Q \rangle $$
+}}
+
+\newcommand{\emojiC}{{
+$$ \langle Q\ _{^{\dot{\smile}}}\ Q \rangle $$
+}}
+
+\newcommand{\comartSmileA}{{
+\begin{center}
+\begin{tikzcd}[ampersand replacement=\&]
+\& *\arrow[ld]\arrow[rd,"h"] \& \& \& *\arrow[ld,swap,"i"]\arrow[rd] \& \\
+* \& \& * \& * \& \& * \\
+\\
+\\
+\& \& \phi \arrow[r] \& \theta \& \&
+\end{tikzcd}
+\end{center}
+}}
+
+\newcommand{\comartSmileB}{{
+\begin{center}
+\begin{tikzcd}[ampersand replacement=\&]
+\& *\arrow[ld]\arrow[rd,"h"] \& \& \& *\arrow[ld,swap,"i"]\arrow[rd] \& \\
+* \& \& * \& * \& \& * \\
+\\
+\\
+\& \& \phi \arrow[r, bend right=20] \& \theta \& \&
+\end{tikzcd}
+\end{center}
+}}
+
+\newcommand{\comartSmileC}{{
+\begin{center}
+\begin{tikzcd}[sep=2em,ampersand replacement=\&]
+\& *\arrow[ld]\arrow[rd,"h"] \& \& \& \& *\arrow[ld,swap,"i"]\arrow[rd] \& \\
+* \& \& * \& \& * \& \& * \\
+\\
+\\
+\& \& \& \phi \arrow[r, loop] \& \& \&
+\end{tikzcd}
+\end{center}
+}}
+
+\newcommand{\comartSmileD}{{
+\begin{center}
+\begin{tikzcd}[sep=2em,ampersand replacement=\&]
+\arrow[dddd, bend right=30]   \pi\& \& *\arrow[ld]\arrow[rd,"h"] \& \& \& \& *\arrow[ld,swap,"i"]\arrow[rd] \& \& \mathcal{H} \arrow[loop right, distance=5em] \arrow[llllllll, dashrightarrow, bend right=25]\\
+\& * \& \& * \& \& * \& \& * \&\\
+\\
+\\
+\arrow[rrrrrrrr, dashrightarrow, bend right=20] \theta\& \& \& \& \phi \arrow[r, loop] \& \& \& \& \mathcal{P} \arrow[uuuu, bend right=30]
+\end{tikzcd}
+\end{center}
+}}
+
+\newcommand{\comartSmileE}{{
+\begin{center}
+\begin{tikzcd}[ampersand replacement=\&]
+\& *\arrow[ld]\arrow[rd,"h"] \& \& \& *\arrow[ld,swap,"i"]\arrow[rd] \& \\
+* \& \& * \& * \& \& * \\
+\\
+\& \phi \arrow[rrr,bend right=50] \& \& \& \theta \&
+\end{tikzcd}
+\end{center}
+}}
+
+\title{Notto - Category for the Working Mathematician}
+\author{tkunn}
+\date{August 2020}
+
+\begin{document}
+
+\maketitle
+
+This is notes for problems on \textit{Category for the Working Mathematician} by S. Mac Lane.
+
+\section{}
+
+\subsection{}
+
+\showArt
+
+\subsection{}
+
+\showArt
+
+\subsection{}
+
+\subsubsection{}
+
+TODO
+
+\subsubsection{}
+
+TODO
+
+\subsubsection{}
+
+TODO
+
+\subsubsection{}
+
+TODO
+
+\subsubsection{}
+
+TODO
+
+\subsection{}
+
+\subsubsection{}
+
+TODO
+
+\subsubsection{}
+
+TODO
+
+\subsubsection{}
+
+TODO
+
+\subsubsection{}
+
+TODO
+
+\subsubsection{}
+
+TODO
+
+\subsubsection{}
+
+TODO
+
+\subsection{}
+
+\subsubsection{}
+
+TODO
+
+\subsubsection{}
+
+TODO
+
+\subsubsection{}
+
+TODO
+
+\subsubsection{}
+
+TODO
+
+\subsubsection{}
+
+TODO
+
+\subsubsection{}
+
+TODO
+
+\subsubsection{}
+
+TODO
+
+\subsubsection{}
+
+TODO
+
+\subsubsection{}
+
+TODO
+
+\subsection{}
+
+Let $U$ be a set that satisfies following conditions:
+
+\begin{enumerate}[label=(\roman*)]
+\item $x \in u \in U \Rightarrow x \in U$
+\item $(u \in U \wedge v \in U) \Rightarrow (\{u, v\}, \langle u, v \rangle, u \times v \in U)$
+\item \begin{enumerate}[label=(\arabic*)]
+\item $x \in U \Rightarrow \mathcal{P} x \in U$
+\item $x \in U \Rightarrow \bigcup x \in U$
+\end{enumerate}
+\item $\omega \in U$, where $\omega = \{0,1,2,\dots\}$ is a set of all finite ordinal numbers.
+\item If there exists a surjection $f : a \rightarrow b$ and $a \in U$ and $b \subset U$, then $b \in U$.
+\end{enumerate}
+
+\subsubsection{}
+
+\textbf{Let $I \in U$, $f : I \rightarrow b $ and $f_i \in U$ for all $i \in I$. Proof $\prod_i f_i \in U$.}
+
+For all $q \in \prod_i f_i$, we can construct a bijection $r : I \rightarrow q$. $\forall w \in q, \exists j \in I, w \in f_j \in U$, hence $q \subset U$. As $I \in U$ and $q \subset U$, we can say $q \in U$. Therefore $\prod_i f_i \subset U$.
+
+Let $|f_k| \geq |f_i|$ for all $i$. Then, we can construct a surjection $g : f_k^I \rightarrow \prod_i f_i$. Also, we can construct a surjection $h : X \rightarrow f_k^I$, with X is either $\mathcal{P} f_k$ or $\mathcal{P} I$. As $X \in U$, $g \circ h : X \rightarrow \prod_i f_i$ and $\prod_i f_i \subset U$, we can say $\prod_i f_i \in U$.
+
+\subsubsection{}
+
+\textbf{(a) Let $I \in U$, $f : I \rightarrow b $ and $f_i \in U$ for all $i \in I$. Proof $\bigcup_i f_i \in U$. \\ (b) Proof that (a) implies following if (i), (ii), (iii)(1), (iv) and (v) holds true: \\ \indent (iii)(2) $x \in U \Rightarrow \bigcup x \in U$. \\ \indent (v) If $f : a \rightarrow b$ is surjective and $a \in U$ and $b \subset U$, then $b \in U$.
+}
+
+\begin{enumerate}[label=(\alph*)]
+\item We can construct a bijection $g :  I \rightarrow \{f_i\ |\ i \in I\}$, $g(i) = f_i$. As $I \in U$ and $f_i \in U$ for all $i$, $\{f_i\ |\ i \in I\} \in U$. Therefore $ \bigcup_i f_i = \bigcup \{f_i\ |\ i \in I\} \in U$.
+\item Because $x \in U$, we have $y \in U$ for all $y \in x$. Therefore we can apply $f : x \rightarrow x, f(i) = i$ to (a) to get $\bigcup x \in U$.
+
+Because $a \in U$ and $b \subset U$, we can apply $f$ to (a) to get $\bigcup_i f_i \in U$. $f$ is surjective, therefore $b = \bigcup_i f_i$. Hence $b \in U$.
+\end{enumerate}
+
+\subsection{}
+
+\showArt
+
+\subsection{}
+
+\showArt
+
+\section{}
+
+\subsection{}
+
+\showArt
+
+\subsection{}
+
+\showArt
+
+\subsection{}
+
+\subsubsection{}
+
+\textbf{Show product of categories includes product of monoids, product of groups and product of sets.}
+
+In this section, $\times_S$ is a product operation for sets, $\times_C$ is for categories, $\times_G$ is for groups and $\times_M$ is for monoids.
+
+\textit{Monoids.} Let $M, N$ be a monoid with object $m, n$ respectively. The only object in $M \times_C N$ is $\langle m, n \rangle$. ... (TODO)
+
+\textit{Groups.} Let $G, H$ be a group with object $a, b$ respectively. $G \times_C H$ ... (TODO)
+
+\textit{Sets.} Let $A, B$ be discrete categories. The set of all objects in $A \times_C B$ is $X = A \times_S B$. The set of all arrows in $A \times_C B$ is $\{\langle f, g \rangle\ |\ a \in A,\ b \in B,\ f \in \hom_A(a, a)\ \wedge\ g \in \hom_B(b, b)\} = \{\langle \mathrm{id}_A(c_0), \mathrm{id}_B(c_1) \rangle\ |\ c \in X\}$. Therefore  $A \times_C B$ is a discrete category of $X = A \times_S B$.
+
+\subsubsection{}
+
+\textbf{Proof that product of two preorders is preorder.}
+
+Let P, Q be preorders. $\forall a \forall b\ | \hom(a, b) | \leq 1$ for both P and Q. Therefore, for all $p_1 \in P$, $p_2 \in P$, $q_1 \in Q$, $q_2 \in Q$, $| \hom_{P \times Q}(\langle p_1, q_1 \rangle, \langle p_2, q_2 \rangle) | = | \hom_P(p_1, p_2) \times \hom_Q(q_1, q_2) | \leq 1$. Hence $P \times Q$ is preorder.
+
+\subsubsection{}
+
+\textbf{Let $\{C_i\ |\ i \in I\}$ be a family of categories indexed by a set $I$. Show product $C = \prod_i C_i$, its projections $P_i : C \rightarrow C_i$ and universal property of these projections.}
+
+Let $\mathrm{id}_X(a) : a \rightarrow a$ be identity in category $X$.
+
+Let the set of all object in $C$ be the product set $\prod_i C_i$ and $\hom_C(a, b) = \prod_i \hom_{C_i}(a_i, b_i)$. Let $\mathrm{id}_C(c)_i = \mathrm{id}_{C_i}(c_i)$ for all $c \in C$. Now, we proof $C$ has a universal property:
+
+\begin{enumerate}
+\item For every $i$ there is a functor $P_i : C \rightarrow C_i$.
+\item For every category $B$ such that a functor $G_i : B \rightarrow C_i$ presents for every $C_i$, there is a functor $F : B \rightarrow C$, which makes the following diagram commute.
+
+\begin{center}
+\begin{tikzcd}[sep=4em]
+B \arrow[d, "F", dashrightarrow] \arrow[dr, "G_i"] \\
+C \arrow[r, "P_i"] & C_i
+\end{tikzcd}
+\end{center}
+\end{enumerate}
+
+First, we proof $P_i : C \rightarrow C_i$ exists. Let the object function be $P_i(x) = x_i$. Let the arrow function be $P_i(f) = f_i$. For all object $c \in C$, $P_i(\mathrm{id}_C(c)) = \mathrm{id}_C(c)_i = \mathrm{id}_{C_i}(c_i) = \mathrm{id}_{C_i}(P_i(c))$. For all arrow $f$, $g$ in C, $P_i(g \circ f) = (g \circ f)_i = g_i \circ f_i =  P_i(g) \circ P_i(f)$. Therefore $P_i$ is a functor.
+
+Second, we proof $F : B \rightarrow C$ exists. Let the object function be $F(x)_i = G_i(x)$. Let the arrow function be $F(f)_i = G_i(f)$. For all object $b \in B$, $F(\mathrm{id}_B(b))_i = G_i(\mathrm{id}_B(b)) =  \mathrm{id}_{C_i}(G_i(b)) = \mathrm{id}_{C_i}(F(b)_i)$. Thus $F(\mathrm{id}_B(b)) = \mathrm{id}_{C}(F(b))$. For all arrow $f$, $g$ in B, $F(f \circ g)_i = G_i(f \circ g) = G_i(f) \circ G_i(g)$. Thus $F(f \circ g) = F(f) \circ F(g)$. Therefore $F$ is a functor.
+
+\subsubsection{}
+
+\textbf{Show opposite of $\mathbf{Matr}_K$.}
+
+In $\mathbf{Matr}_K$, the object set is all positive integers $\{1, 2, 3, ...\} = \omega \setminus \{0\}$. $\hom_{\mathbf{Matr}_K}(n, m)$ is all rectangular matrix on $K$ with shape $m \times n$. Therefore $\mathbf{Matr}_K^{\mathrm{op}}$ has the same objects $\omega \setminus \{0\}$ and  $\hom_{\mathbf{Matr}_K^{\mathrm{op}}}(n, m)$ is all rectangular matrix on $K$ with shape $n \times m$.
+
+\subsubsection{}
+
+\textbf{Show that the ring of real continuous functions on a topological space is the object function of a contravariant functor from $\mathbf{Top}$ to $\mathbf{Rng}$.}
+
+Let $R_T \subseteq (T \rightarrow \mathbb{R})$ be a ring whose elements are continuous functions from a topological space $T$ to real number. We construct $R_T$ as follows:
+
+\begin{enumerate}
+    \item Additive identity: $0_{R_T} = x \mapsto 0$.
+    \item Multiplicative identity: $1_{R_T} = x \mapsto 1$.
+    \item Addition: $f + g = x \mapsto f(x) + g(x)$.
+    \item Multiplication: $f \times g = x \mapsto f(x) \times g(x)$.
+\end{enumerate}
+
+Let $X$ and $Y$ be any topological spaces. If we have a continuous function $f : Y \rightarrow X$, we can construct a ring homomorphism $H(f) = h : R_X \rightarrow R_Y$. We define $h(r) = r \circ f$. Then $h(0_{R_X}) = (x \mapsto 0) \circ f = 0_{R_Y}$, $h(1_{R_X}) = (x \mapsto 1) \circ f = 1_{R_Y}$, $(h(s + t))(x) = (s + t)(f(x)) = s(f(x)) + t(f(x))$, $(h(s \times t))(x) = (s \times t)(f(x)) = s(f(x)) \times t(f(x))$. Therefore $H(f)$ is a ring homomorphism.
+
+Now we construct a functor $F : \mathbf{Top}^{\mathrm{op}} \rightarrow \mathbf{Rng}$. Let the object function be $F(A) = R_A$ and the arrow function be $F(g) = H(g^{\mathrm{op}})$, except for any $T \in \mathbf{Top}^{\mathrm{op}}$, $F(\mathrm{id}(T)) = \mathrm{id}(R_T)$. For all arrow $a, b$ in $\mathbf{Top}^{\mathrm{op}}$ such that $a \neq \mathrm{id}\ \wedge\ b \neq \mathrm{id}$, $F(b \circ a) = H((b \circ a)^{\mathrm{op}}) = H(a^{\mathrm{op}} \circ b^{\mathrm{op}}) = H(b^{\mathrm{op}}) \circ H(a^{\mathrm{op}}) = F(b) \circ F(a)$. For all arrow $a$ in $\mathbf{Top}^{\mathrm{op}}$, $F(\mathrm{id} \circ a) = F(a \circ \mathrm{id}) = F(\mathrm{id}) \circ F(a) = F(a) \circ F(\mathrm{id}) = F(a)$. Therefore $F$ is a functor and $\overline{F}$ is a contravariant functor from $\mathbf{Top}$ to $\mathbf{Rng}$.
+
+\subsection{}
+
+\subsubsection{}
+
+\textbf{Show that for any ring $R$, $R\text{-}\mathbf{Mod}$ is a full subcategory of $\mathbf{Ab}^R$.}
+
+\subsubsection{}
+
+\textbf{For a finite discrete category $X$, describe $B^X$.}
+
+\subsubsection{}
+
+\textbf{Let $\mathbf{N}$ be a discrete category of natural numbers. Describe $\mathbf{Ab}^{\mathbf{N}}$.}
+
+\subsubsection{}
+
+\textbf{Let $P$ and $Q$ be preorders. Describe $Q^P$ and show it is a preorder.}
+
+\subsubsection{}
+
+\textbf{Let $\mathbf{Fin}$ be a category of all finite sets and $G$ be a finite group. Describe $\mathbf{Fin}^G$.}
+
+\section{}
+
+\section{}
+
+\section{}
+
+\section{}
+
+\section{}
+
+\section{}
+
+\section{}
+
+\section{}
+
+\section{}
+
+\section{}
+
+\end{document}
