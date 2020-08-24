@@ -109,6 +109,18 @@ $$ \langle Q\ _{^{\dot{\smile}}}\ Q \rangle $$
 \end{center}
 }}
 
+\newcommand{\comartSmileF}{{
+\begin{center}
+\begin{tikzcd}[row sep=3em,column sep=3em,ampersand replacement=\&]
+\&\&Sa^\prime\arrow[dddd,shorten=21mm,xshift=8mm,yshift=8mm]\arrow[dddd,shorten=21mm,xshift=-8mm,yshift=8mm]\\
+\&\&\&\\
+Sa\arrow[rrrr,shorten=5em,yshift=1.5mm,leftrightarrow,bend right]\arrow[rruu]\&\&\upsilon\&\&Ta^\prime\arrow[lluu]\\
+\&\&\&\&\\
+\&\&Ta\arrow[rruu]\arrow[lluu]
+\end{tikzcd}
+\end{center}
+}}
+
 \title{Notto - Category for the Working Mathematician}
 \author{tkunn}
 \date{August 2020}
@@ -117,7 +129,7 @@ $$ \langle Q\ _{^{\dot{\smile}}}\ Q \rangle $$
 
 \maketitle
 
-This is notes for problems on \textit{Category for the Working Mathematician} by S. Mac Lane.
+This is solutions for problems on the second edition of \textit{Category for the Working Mathematician} by S. Mac Lane. Questions are placed in the first line of each sections. Questions may be modified from the original text for simplicity and clarity.
 
 \section{}
 
@@ -234,7 +246,7 @@ Let $U$ be a set that satisfies following conditions:
 
 \textbf{Let $I \in U$, $f : I \rightarrow b $ and $f_i \in U$ for all $i \in I$. Proof $\prod_i f_i \in U$.}
 
-For all $q \in \prod_i f_i$, we can construct a bijection $r : I \rightarrow q$. $\forall w \in q, \exists j \in I, w \in f_j \in U$, hence $q \subset U$. As $I \in U$ and $q \subset U$, we can say $q \in U$. Therefore $\prod_i f_i \subset U$.
+For all $q \in \prod_i f_i$, we can construct a bijection $r : I \rightarrow q$. $q \subset U$ because $\forall w \in q,\ \exists j \in I,\ w \in f_j \in U$. Since $I \in U$ and $q \subset U$, we can say $q \in U$. Therefore $\prod_i f_i \subset U$.
 
 Let $|f_k| \geq |f_i|$ for all $i$. Then, we can construct a surjection $g : f_k^I \rightarrow \prod_i f_i$. Also, we can construct a surjection $h : X \rightarrow f_k^I$, with X is either $\mathcal{P} f_k$ or $\mathcal{P} I$. As $X \in U$, $g \circ h : X \rightarrow \prod_i f_i$ and $\prod_i f_i \subset U$, we can say $\prod_i f_i \in U$.
 
@@ -302,7 +314,7 @@ Let the set of all object in $C$ be the product set $\prod_i C_i$ and $\hom_C(a,
 
 \begin{center}
 \begin{tikzcd}[sep=4em]
-B \arrow[d, "F", dashrightarrow] \arrow[dr, "G_i"] \\
+B \arrow[d, swap, "F", dashrightarrow] \arrow[dr, "G_i"] \\
 C \arrow[r, "P_i"] & C_i
 \end{tikzcd}
 \end{center}
@@ -320,7 +332,7 @@ In $\mathbf{Matr}_K$, the object set is all positive integers $\{1, 2, 3, ...\} 
 
 \subsubsection{}
 
-\textbf{Show that the ring of real continuous functions on a topological space is the object function of a contravariant functor from $\mathbf{Top}$ to $\mathbf{Rng}$.}
+\textbf{Show that the mapping between a topological space and the ring of real continuous functions on it is the object function of a contravariant functor on $\mathbf{Top}$ to $\mathbf{Rng}$.}
 
 Let $R_T \subseteq (T \rightarrow \mathbb{R})$ be a ring whose elements are continuous functions from a topological space $T$ to real number. We construct $R_T$ as follows:
 
@@ -333,7 +345,7 @@ Let $R_T \subseteq (T \rightarrow \mathbb{R})$ be a ring whose elements are cont
 
 Let $X$ and $Y$ be any topological spaces. If we have a continuous function $f : Y \rightarrow X$, we can construct a ring homomorphism $H(f) = h : R_X \rightarrow R_Y$. We define $h(r) = r \circ f$. Then $h(0_{R_X}) = 0_{R_Y}$, $h(1_{R_X}) = 1_{R_Y}$, $(h(s + t))(x) = (s + t)(f(x)) = s(f(x)) + t(f(x))$, $(h(s \times t))(x) = (s \times t)(f(x)) = s(f(x)) \times t(f(x))$. Therefore $H(f)$ is a ring homomorphism.
 
-Now we construct a functor $F : \mathbf{Top}^{\mathrm{op}} \rightarrow \mathbf{Rng}$. Let the object function be $F(A) = R_A$ and the arrow function be $F(g) = H(g^{\mathrm{op}})$. For all arrow $a, b$ in $\mathbf{Top}^{\mathrm{op}}$, $F(b \circ a) = H((b \circ a)^{\mathrm{op}}) = H(a^{\mathrm{op}} \circ b^{\mathrm{op}}) = H(b^{\mathrm{op}}) \circ H(a^{\mathrm{op}}) = F(b) \circ F(a)$. For all topological space $T \in \mathbf{Top}^{\mathrm{op}}$, $F(\mathrm{id}(T)) = H(\mathrm{id}(T)) = \mathrm{id}(R_T)$. Therefore $F$ is a functor and $\overline{F}$ is a contravariant functor from $\mathbf{Top}$ to $\mathbf{Rng}$.
+Now we construct a functor $F : \mathbf{Top}^{\mathrm{op}} \rightarrow \mathbf{Rng}$. Let the object function be $F(A) = R_A$ and the arrow function be $F(g) = H(g^{\mathrm{op}})$. For all arrow $a, b$ in $\mathbf{Top}^{\mathrm{op}}$, $F(b \circ a) = H((b \circ a)^{\mathrm{op}}) = H(a^{\mathrm{op}} \circ b^{\mathrm{op}}) = H(b^{\mathrm{op}}) \circ H(a^{\mathrm{op}}) = F(b) \circ F(a)$. For all topological space $T \in \mathbf{Top}^{\mathrm{op}}$, $F(\mathrm{id}(T)) = H(\mathrm{id}(T)) = \mathrm{id}(R_T)$. Therefore $F$ is a functor and $\overline{F}$ is a contravariant functor on $\mathbf{Top}$ to $\mathbf{Rng}$.
 
 \subsection{}
 
@@ -357,7 +369,7 @@ TODO
 
 \textbf{For a finite discrete category $X$, describe $B^X$.}
 
-For any functor $T : X \rightarrow B$, if its object function is $T(a) = b$, its arrow function only maps $\mathrm{id}(a)$ to $\mathrm{id}(b)$. Such a functor $T$ is an object of $B^X$.
+For any functor $T : X \rightarrow B$, if its object function is $T(a) = b$, its arrow function maps $\mathrm{id}(a)$ to $\mathrm{id}(b)$. Such a functor $T$ is an object of $B^X$.
 
 Let $R, S : X \rightarrow B$ be functors and $\tau$ be a map on an object of X to an arrow in $B$. $(\tau : R\ \dot{\rightarrow}\ S) \Leftrightarrow (\forall x \in X,\ \tau_x(R(x)) = S(x))$. Therefore $\hom(R, S) = \{\tau\ |\ \forall x \in X,\ \tau_x(R(x)) = S(x)\}$. Therefore an arrow on $R$ to $S$ exists iff $(\forall x, y \in X,\ e_R(x, y) \rightarrow e_S(x, y))\ \wedge\ (\forall x \in X,\ \hom(R(x), S(x)) \neq \emptyset)$, where $e_T(x, y) \Leftrightarrow (\exists a \in B, \{x, y\} \subseteq \{ w\ |\ a = T(w) \})$.
 
@@ -371,12 +383,12 @@ An object of $\mathbf{Ab}^{\mathbf{N}}$ is a map on $\mathbb{N}$ to $\mathbf{Ab}
 
 \textbf{Let $P$ and $Q$ be preorders. Describe $Q^P$ and show it is a preorder.}
 
-Let $R, S : P \rightarrow Q$. Then $R$ and $S$ are objects of $Q^P$. Let $\tau$ be a natural transform $\tau : R\ \dot{\rightarrow}\ S$. $\tau$ is an arrow on $R$ to $S$ in $Q^P$. Since $\tau$ is natural and $P$ is preorder, following diagram is commute for every pair of objects $p, p^\prime \in P$, where $f(p, p^\prime)$ is the only arrow on $p$ to $p^\prime$. Since $Q$ is preorder, $\tau x = g(Rx, Sx)$, where $g(Rx, Sx)$ is the only arrow on $Rx$ to $Sx$.
+Let $R, S : P \rightarrow Q$. Then $R$ and $S$ are objects of $Q^P$. Let $\tau$ be a natural transform $\tau : R\ \dot{\rightarrow}\ S$. $\tau$ is an arrow on $R$ to $S$ in $Q^P$. Since $\tau$ is natural and $P$ is preorder, following diagram is commute for every pair of objects $p, p^\prime \in P$. $a = f(p,\,p^\prime)$, where $f(p, p^\prime)$ is the only arrow on $p$ to $p^\prime$. Since $Q$ is preorder, $\tau p = g(Rp, Sp)$, where $g(Rp, Sp)$ is the only arrow on $Rp$ to $Sp$.
 
 \begin{center}
-\begin{tikzcd}[sep=9em]
-Rp \arrow[d, "{Rf(p,\,p^\prime)}"] \arrow[r, "{\tau p\,=\,g(Rp,\,Sp)}"] & Sp \arrow[d, "{Sf(p,\,p^\prime)}"]\\
-Rp^\prime \arrow[r, "{\tau p^\prime\,=\,g(Rp^\prime,\,Sp^\prime)}"] & Sp^\prime
+\begin{tikzcd}
+Rp \arrow[d, swap, "{Ra}"] \arrow[r, "{\tau p}"] & Sp \arrow[d, "{Sa}"]\\
+Rp^\prime \arrow[r, "{\tau p^\prime}"] & Sp^\prime
 \end{tikzcd}
 \end{center}
 
@@ -388,9 +400,49 @@ As explained above, $\sigma p = g(Rp, Sp)$ for all $\sigma : R\ \dot{\rightarrow
 
 \textbf{Let $\mathbf{Fin}$ be a category of all finite sets and $G$ be a finite group. Describe $\mathbf{Fin}^G$.}
 
+Let $\mathbf{Fin}$ be a category of all finite sets. The object is every finite set and the arrow is every mapping between every pair of finite sets.
 
+Let $G$ be a finite group. $G$ is a category of only one object. Every arrow $a$ in $G$ has its inverse $a^{-1}$ such that $a \circ a^{-1} = a^{-1} \circ a = \mathrm{id}$.
+
+$\mathbf{Fin}^G$ is a category that have any functors on $G$ to $\mathbf{Fin}$ as objects and any natural transform between two objects as arrows. The group $G$ has only one object $x \in G$, thus any functor $T \in \mathbf{Fin}^G$ maps a object $x$ to a finite set $T(x) \in \mathbf{Fin}$, and endomorphisms of $x$ to endomorphisms of $T(x)$. For any arrows $a$, $b$ in $G$, $T(b \circ a) = T(b) \circ T(a)$. Also, $\mathrm{id} = T(\mathrm{id}) = T(a \circ a^{-1}) = T(a) \circ T(a^{-1})$. Thus any elements in the image of the arrow function of $T$ is invertible. Therefore $T$ is a permutation representation of $G$.
+
+Now, let $\tau : R\ \dot{\rightarrow}\ S$ be an arrow in $\mathbf{Fin}^G$. Then, the following diagram commutes for any arrow $a$ in $G$:
+\begin{center}
+\begin{tikzcd}
+Rx \arrow[d, swap, "Ra"] \arrow[r, "\tau x"] & Sx \arrow[d, "Sa"]\\
+Rx \arrow[r, "\tau x"] & Sx
+\end{tikzcd}
+\end{center}
+Therefore, $\hom(R, S) = \{\tau\ |\ \forall a,\ \tau x \circ R a = S a \circ \tau x\}$.
+
+\subsubsection{}
+TODO
+
+\subsubsection{}
+TODO
+
+\subsubsection{}
+TODO
 
 \subsection{}
+
+\subsubsection{}
+
+\textbf{Let A, B and C are small categories. Proof that $C^{(A \times B)} \cong (C^B)^A$ and proof that they are natural. Proof that }
+
+\subsubsection{}
+
+\subsubsection{}
+
+\subsubsection{}
+
+\subsubsection{}
+
+\subsubsection{}
+
+\subsubsection{}
+
+\subsubsection{}
 
 \subsection{}
 
