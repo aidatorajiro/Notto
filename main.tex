@@ -129,7 +129,7 @@ Sa\arrow[rrrr,shorten=5em,yshift=1.5mm,leftrightarrow,bend right]\arrow[rruu]\&\
 
 \maketitle
 
-This is solutions for problems on the second edition of \textit{Category for the Working Mathematician} by S. Mac Lane. Questions are placed in the first line of each sections. Questions may be modified from the original text for simplicity and clarity.
+This is solutions for problems on the second edition of \textit{Category for the Working Mathematician} by S. Mac Lane. Problems are placed in the first line of each sections. They may be modified from the original text for simplicity, clarity and some laziness.
 
 \section{}
 
@@ -292,7 +292,7 @@ In this section, $\times_S$ is a product operation for sets, $\times_C$ is for c
 
 \textit{Groups.} Let $G, H$ be a group with object $a, b$ respectively. $G \times_C H$ ... (TODO)
 
-\textit{Sets.} Let $A, B$ be discrete categories. The set of all objects in $A \times_C B$ is $X = A \times_S B$. The set of all arrows in $A \times_C B$ is $\{\langle f, g \rangle\ |\ a \in A,\ b \in B,\ f \in \hom_A(a, a)\ \wedge\ g \in \hom_B(b, b)\} = \{\langle \mathrm{id}_A(c_0), \mathrm{id}_B(c_1) \rangle\ |\ c \in X\}$. Therefore  $A \times_C B$ is a discrete category of $X = A \times_S B$.
+\textit{Sets.} Let $A, B$ be discrete categories. The set of all objects in $A \times_C B$ is $X = A \times_S B$. The set of all arrows in $A \times_C B$ is $\{\langle f, g \rangle\ |\ a \in A,\ b \in B,\ f \in A(a, a)\ \wedge\ g \in B(b, b)\} = \{\langle \mathrm{id}_A(c_0), \mathrm{id}_B(c_1) \rangle\ |\ c \in X\}$. Therefore  $A \times_C B$ is a discrete category of $X = A \times_S B$.
 
 \subsubsection{}
 
@@ -306,7 +306,7 @@ Let P, Q be preorders. $\forall a \forall b\ | \hom(a, b) | \leq 1$ for both P a
 
 Let $\mathrm{id}_X(a) : a \rightarrow a$ be identity in category $X$.
 
-Let the set of all object in $C$ be the product set $\prod_i C_i$ and $\hom_C(a, b) = \prod_i \hom_{C_i}(a_i, b_i)$. Let $\mathrm{id}_C(c)_i = \mathrm{id}_{C_i}(c_i)$ for all $c \in C$. Now, we proof $C$ has a universal property:
+Let the set of all object in $C$ be the product set $\prod_i C_i$ and $C(a, b) = \prod_i C_i(a_i, b_i)$. Let $\mathrm{id}_C(c)_i = \mathrm{id}_{C_i}(c_i)$ for all $c \in C$. Now, we proof $C$ has a universal property:
 
 \begin{enumerate}
 \item For every $i$ there is a functor $P_i : C \rightarrow C_i$.
@@ -328,7 +328,7 @@ Second, we proof $F : B \rightarrow C$ exists. Let the object function be $F(x)_
 
 \textbf{Show opposite of $\mathbf{Matr}_K$.}
 
-In $\mathbf{Matr}_K$, the object set is all positive integers $\{1, 2, 3, ...\} = \omega \setminus \{0\}$. $\hom_{\mathbf{Matr}_K}(n, m)$ is all rectangular matrix on $K$ with shape $m \times n$. Therefore $\mathbf{Matr}_K^{\mathrm{op}}$ has the same objects $\omega \setminus \{0\}$ and  $\hom_{\mathbf{Matr}_K^{\mathrm{op}}}(n, m)$ is all rectangular matrix on $K$ with shape $n \times m$.
+In $\mathbf{Matr}_K$, the object set is all positive integers $\{1, 2, 3, ...\} = \omega \setminus \{0\}$. $\mathbf{Matr}_K(n, m)$ is all rectangular matrix on $K$ of shape $m \times n$. Therefore $\mathbf{Matr}_K^{\mathrm{op}}$ has the same objects $\omega \setminus \{0\}$ and  $\mathbf{Matr}_K^{\mathrm{op}}(n, m)$ is all rectangular matrix on $K$ of shape $n \times m$.
 
 \subsubsection{}
 
@@ -404,7 +404,7 @@ Let $\mathbf{Fin}$ be a category of all finite sets. The object is every finite 
 
 Let $G$ be a finite group. $G$ is a category of only one object. Every arrow $a$ in $G$ has its inverse $a^{-1}$ such that $a \circ a^{-1} = a^{-1} \circ a = \mathrm{id}$.
 
-$\mathbf{Fin}^G$ is a category that have any functors on $G$ to $\mathbf{Fin}$ as objects and any natural transform between two objects as arrows. The group $G$ has only one object $x \in G$, thus any functor $T \in \mathbf{Fin}^G$ maps a object $x$ to a finite set $T(x) \in \mathbf{Fin}$, and endomorphisms of $x$ to endomorphisms of $T(x)$. For any arrows $a$, $b$ in $G$, $T(b \circ a) = T(b) \circ T(a)$. Also, $\mathrm{id} = T(\mathrm{id}) = T(a \circ a^{-1}) = T(a) \circ T(a^{-1})$. Thus any elements in the image of the arrow function of $T$ is invertible. Therefore $T$ is a permutation representation of $G$.
+$\mathbf{Fin}^G$ is a category that have any functor on $G$ to $\mathbf{Fin}$ as objects and any natural transform between two objects as arrows. The group $G$ has only one object $x \in G$, thus any functor $T \in \mathbf{Fin}^G$ map $x$ to a finite set $T(x) \in \mathbf{Fin}$, and endomorphisms of $x$ to endomorphisms of $T(x)$. For any arrow $a$, $b$ in $G$, $T(b \circ a) = T(b) \circ T(a)$. Also, $\mathrm{id} = T(\mathrm{id}) = T(a \circ a^{-1}) = T(a) \circ T(a^{-1})$. Thus any element in the image of the arrow function of $T$ is invertible. Therefore $T$ is a permutation representation of $G$.
 
 Now, let $\tau : R\ \dot{\rightarrow}\ S$ be an arrow in $\mathbf{Fin}^G$. Then, the following diagram commutes for any arrow $a$ in $G$:
 \begin{center}
@@ -413,7 +413,7 @@ Rx \arrow[d, swap, "Ra"] \arrow[r, "\tau x"] & Sx \arrow[d, "Sa"]\\
 Rx \arrow[r, "\tau x"] & Sx
 \end{tikzcd}
 \end{center}
-Therefore, $\hom(R, S) = \{\tau\ |\ \forall a,\ \tau x \circ R a = S a \circ \tau x\}$.
+Therefore, $\hom(R, S) = \{\tau\ |\ \forall a,\ \tau x \circ R a = S a \circ \tau x\}$... what does it mean???? TODO
 
 \subsubsection{}
 TODO
@@ -428,9 +428,24 @@ TODO
 
 \subsubsection{}
 
-\textbf{Let A, B and C are small categories. Proof that $C^{(A \times B)} \cong (C^B)^A$ and proof that they are natural. Proof that }
+\textbf{Let A, B and C are small categories. Proof that $\mathbf{Cat}(A \times B, C) \cong \mathbf{Cat}(A, C^B)$ and that they are natural.}
+
+First, we proof there are two bijections $f : \mathbf{Cat}(A \times B, C) \rightarrow \mathbf{Cat}(A, C^B)$ and $g : \mathbf{Cat}(A, C^B) \rightarrow \mathbf{Cat}(A \times B, C)$ such that $f \circ g = g \circ f = \mathrm{id}$. For any $x : A \times B \rightarrow C$, . Let $f(x) = $ and $g(x) = $.
+
+Second, we proof $f$ and $g$ are natural.
+
+
+TODO
 
 \subsubsection{}
+
+\textbf{Let A, B and C are categories. Proof that $(A \times B)^C \cong A^C \times B^C$ and $C^{A \times B} \cong (C^B)^A$.}
+
+For any $x \in (A \times B)^C$, there are two functions $G(c) = x(c)_0$ and $H(c) = x(c)_1$. Let the object function be $F(x) = \langle G, H \rangle$, where $F : (A \times B)^C \rightarrow A^C \times B^C$.
+
+For any natural transform $\tau : (A \times B)\ \dot{\rightarrow}\ C$, there are two natural transforms $\tau_0 : A\ \dot{\rightarrow}\ C$ and $\tau_1 : B\ \dot{\rightarrow}\ C$. Let $\tau_0(x) = $ and $\tau_1(x) = $.
+
+Thus we can construct the arrow function $F(\tau) = \langle \tau_0, \tau_1 \rangle$.
 
 \subsubsection{}
 
