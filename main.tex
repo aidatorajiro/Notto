@@ -306,7 +306,7 @@ Let P, Q be preorders. $\forall a \forall b\ | \hom(a, b) | \leq 1$ for both P a
 
 Let $\mathrm{id}_X(a) : a \rightarrow a$ be identity in category $X$.
 
-Let the set of all object in $C$ be the product set $\prod_i C_i$ and $C(a, b) = \prod_i C_i(a_i, b_i)$. Let $\mathrm{id}_C(c)_i = \mathrm{id}_{C_i}(c_i)$ for all $c \in C$. Now, we proof $C$ has a universal property:
+Let the set of all object in $C$ be the product set $\prod_i C_i$ and $C(a, b) = \prod_i C_i(a_i, b_i)$. Let $\mathrm{id}_C(c)_i = \mathrm{id}_{C_i}(c_i)$ for all $c \in C$. Now, we prove $C$ has a universal property:
 
 \begin{enumerate}
 \item For every $i$ there is a functor $P_i : C \rightarrow C_i$.
@@ -320,9 +320,9 @@ C \arrow[r, "P_i"] & C_i
 \end{center}
 \end{enumerate}
 
-First, we proof $P_i : C \rightarrow C_i$ exists. Let the object function be $P_i(x) = x_i$. Let the arrow function be $P_i(f) = f_i$. For all object $c \in C$, $P_i(\mathrm{id}_C(c)) = \mathrm{id}_C(c)_i = \mathrm{id}_{C_i}(c_i) = \mathrm{id}_{C_i}(P_i(c))$. For all arrow $f$, $g$ in C, $P_i(g \circ f) = (g \circ f)_i = g_i \circ f_i =  P_i(g) \circ P_i(f)$. Therefore $P_i$ is a functor.
+First, we prove $P_i : C \rightarrow C_i$ exists. Let the object function be $P_i(x) = x_i$. Let the arrow function be $P_i(f) = f_i$. For all object $c \in C$, $P_i(\mathrm{id}_C(c)) = \mathrm{id}_C(c)_i = \mathrm{id}_{C_i}(c_i) = \mathrm{id}_{C_i}(P_i(c))$. For all arrow $f$, $g$ in C, $P_i(g \circ f) = (g \circ f)_i = g_i \circ f_i =  P_i(g) \circ P_i(f)$. Therefore $P_i$ is a functor.
 
-Second, we proof $F : B \rightarrow C$ exists. Let the object function be $F(x)_i = G_i(x)$. Let the arrow function be $F(f)_i = G_i(f)$. For all object $b \in B$, $F(\mathrm{id}_B(b))_i = G_i(\mathrm{id}_B(b)) =  \mathrm{id}_{C_i}(G_i(b)) = \mathrm{id}_{C_i}(F(b)_i)$. Thus $F(\mathrm{id}_B(b)) = \mathrm{id}_{C}(F(b))$. For all arrow $f$, $g$ in B, $F(f \circ g)_i = G_i(f \circ g) = G_i(f) \circ G_i(g)$. Thus $F(f \circ g) = F(f) \circ F(g)$. Therefore $F$ is a functor.
+Second, we prove $F : B \rightarrow C$ exists. Let the object function be $F(x)_i = G_i(x)$. Let the arrow function be $F(f)_i = G_i(f)$. For all object $b \in B$, $F(\mathrm{id}_B(b))_i = G_i(\mathrm{id}_B(b)) =  \mathrm{id}_{C_i}(G_i(b)) = \mathrm{id}_{C_i}(F(b)_i)$. Thus $F(\mathrm{id}_B(b)) = \mathrm{id}_{C}(F(b))$. For all arrow $f$, $g$ in B, $F(f \circ g)_i = G_i(f \circ g) = G_i(f) \circ G_i(g)$. Thus $F(f \circ g) = F(f) \circ F(g)$. Therefore $F$ is a functor.
 
 \subsubsection{}
 
@@ -359,7 +359,7 @@ TODO
 
 %We define a functor $F : R\textbf{-}\mathbf{Mod} \rightarrow \mathbf{Ab}^R$ by $F() = $.
 
-%We proof $F$ is full.
+%we prove $F$ is full.
 
 % First, we can see $R\textbf{-}\mathbf{Mod}$ as a subcategory of $\mathbf{Ab}^R$. 
 
@@ -430,9 +430,9 @@ TODO
 
 \textbf{Let A, B and C are small categories. Proof that $\mathbf{Cat}(A \times B, C) \cong \mathbf{Cat}(A, C^B)$ and that they are natural.}
 
-First, we proof there are two bijections $f : \mathbf{Cat}(A \times B, C) \rightarrow \mathbf{Cat}(A, C^B)$ and $g : \mathbf{Cat}(A, C^B) \rightarrow \mathbf{Cat}(A \times B, C)$ such that $f \circ g = g \circ f = \mathrm{id}$. For any $x : A \times B \rightarrow C$, . Let $f(x) = $ and $g(x) = $.
+First, we prove there are two bijections $f : \mathbf{Cat}(A \times B, C) \rightarrow \mathbf{Cat}(A, C^B)$ and $g : \mathbf{Cat}(A, C^B) \rightarrow \mathbf{Cat}(A \times B, C)$ such that $f \circ g = g \circ f = \mathrm{id}$. For any $x : A \times B \rightarrow C$, . Let $f(x) = $ and $g(x) = $.
 
-Second, we proof $f$ and $g$ are natural.
+Second, we prove $f$ and $g$ are natural.
 
 
 TODO
