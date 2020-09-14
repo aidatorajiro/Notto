@@ -430,10 +430,11 @@ TODO
 
 \textbf{Let A, B and C are small categories. Prove that $\mathbf{Cat}(A \times B, C) \cong \mathbf{Cat}(A, C^B)$ and that they are natural.}
 
-First, we prove there are two bijections $f : \mathbf{Cat}(A \times B, C) \rightarrow \mathbf{Cat}(A, C^B)$ and $g : \mathbf{Cat}(A, C^B) \rightarrow \mathbf{Cat}(A \times B, C)$ such that $f \circ g = g \circ f = \mathrm{id}$. For any $x : A \times B \rightarrow C$, . Let $f(x) = $ and $g(x) = $.
+First, we prove there is a bijection $f : \mathbf{Cat}(A \times B, C) \rightarrow \mathbf{Cat}(A, C^B)$. Let $f(F) = G$, where $F : A \times B \rightarrow C$ and $G : A \rightarrow C^B$.
 
-Second, we prove $f$ and $g$ are natural.
+Let's see the object function of $G$. Let $G(a) = H$, where $H : B \rightarrow C$ and $a \in A$. Let $H(b) = F(\langle a, b \rangle)$ for objects and $H(b) = F(\langle \mathrm{id}(a), b \rangle)$ for arrows. Then for any $b \in B$, $H(\mathrm{id}(b)) = F(\langle \mathrm{id}(a), \mathrm{id}(b) \rangle) = \mathrm{id}(H(b))$. For any arrow $x$, $y$ in $A$, $H(x \circ y) = F(\langle \mathrm{id}(a), x \circ y \rangle) = F(\langle \mathrm{id}(a), x \rangle) \circ F(\langle \mathrm{id}(a), y \rangle) = H(x) \circ H(y)$. Therefore $H$ is a functor.
 
+Let's see the arrow function of $G$. Let $G(a) = \tau$, where $a$ is an arrow in $A$ and $\tau : B\ \dot{\rightarrow}\ C$.
 
 TODO
 
