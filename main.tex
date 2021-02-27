@@ -447,21 +447,19 @@ TODO
 
 \subsubsection{}
 
-%\textbf{Let A, B and C are small categories. Prove that $\mathbf{Cat}(A \times B, C) \cong \mathbf{Cat}(A, C^B)$ and that they are natural.}
-
 \showArt
 
-First, we prove there is a bijection $f : \mathbf{Cat}(A \times B, C) \rightarrow \mathbf{Cat}(A, C^B)$. Let $f(F) = G$, where $F : A \times B \rightarrow C$ and $G : A \rightarrow C^B$.
+symbols: A B C F S T
 
-We define the object function of $G$. Let $G(a) = H$, where $H : B \rightarrow C$ and $a \in A$. Let $H(b) = F(\langle a, b \rangle)$ for objects and $H(b) = F(\langle \mathrm{id}(a), b \rangle)$ for arrows. Then for any $b \in B$, $H(\mathrm{id}(b)) = F(\langle \mathrm{id}(a), \mathrm{id}(b) \rangle) = \mathrm{id}(H(b))$. For any arrow $x$, $y$ in $A$, $H(x \circ y) = F(\langle \mathrm{id}(a), x \circ y \rangle) = F(\langle \mathrm{id}(a), x \rangle) \circ F(\langle \mathrm{id}(a), y \rangle) = H(x) \circ H(y)$. Therefore $H$ is a functor.
+We prove there is a bijection $F : \mathbf{Cat}(A \times B, C) \rightarrow \mathbf{Cat}(A, C^B)$.
 
-We define the arrow function of $G$. Let $G(a) = \tau$, where $a$ is an arrow in $A$ and $\tau : B\ \dot{\rightarrow}\ C$. Let $\tau(b) = F(\langle a, \mathrm{id}(b) \rangle)$.
+Let $FT = S$, where $T : A \times B \rightarrow C$ and $S : A \rightarrow C^B$. First, we make the object function of $S$. Given $a \in A$, we make a subcategory $a \subseteq A$, a category of an object $a$ and an arrow $\mathrm{id}(a)$. Trivially, there is a functor $f : B \rightarrow a \times B$. As $a \times B \subseteq A \times B$, now we define $Sa : B \rightarrow C$, $Sa = T \circ f$. Second, we make the arrow function of $S$. Let $Sa = \tau$, where $a : a_1 \rightarrow a_2$ is an arrow in $A$, $\tau : S a_1\ \dot{\rightarrow}\ S a_2$, $\tau b = T(\langle a, \mathrm{id}(b) \rangle)$. Let $g : b_1 \rightarrow b_2$ is an arrow in $B$. Then $Sa_2g(\tau b_1(Sa_1b_1)) = Sa_2b_2 = \tau b_2(Sa_1g (Sa_1b_1))$. Thus $\tau$ is natural.
 
-TODO
+Next, we prove for all $S : A \rightarrow C^B$, there exists $T : A \times B \rightarrow C$, such that $FT = S$. First, we prove for the object function of $T$. We define $T(\langle a, b \rangle) = Sab$. $FTab = T(\langle a, b \rangle)$, thus $FT = S$. Second, we prove for the arrow function. Let $T(\langle a, b \rangle) = Sa(\mathrm{dom}(b))$. Then $FTab = Sab$ for any arrow $a$ in $A$, object $b \in B$.
+
+Finally, we prove that for all $T_1,\ T_2 : A \times B \rightarrow C$, if $FT_1 = FT_2$, then $T_1 = T_2$. Let $FT_1 = FT_2$ and $n \in \{1,\ 2\}$. First, for all $a \in A$, $b \in B$, $FT_nab = T_n(\langle a, b \rangle)$. Thus $T_1 = T_2$ for the object functions. Second, for every object $a \in A$, arrow $b$ in $B$, $FT_nab = T_nab$. And for every arrow $a$ in $A$, object $b \in B$, $FT_nab = T_n(\langle a, \mathrm{id}(b) \rangle)$. Thus $T_1 = T_2$ for the arrow functions.
 
 \subsubsection{}
-
-%\textbf{Let A, B and C are categories. Prove that $(A \times B)^C \cong A^C \times B^C$ and $C^{A \times B} \cong (C^B)^A$.}
 
 \showArt
 
