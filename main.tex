@@ -4,36 +4,82 @@
 \usepackage{tikz-cd}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{calc}
 
 \newcounter{artCounter}
 \setcounter{artCounter}{0}
+\newcounter{artSearch}
+
 \newcommand{\showArt}{{
-\ifnum \value{artCounter}=0
+\setcounter{artSearch}{0}
+
+\ifnum \value{artCounter}=\value{artSearch}
 \emojiA
 \fi
-\ifnum \value{artCounter}=1
+\addtocounter{artSearch}{1}
+
+\ifnum \value{artCounter}=\value{artSearch}
 \emojiB
 \fi
-\ifnum \value{artCounter}=2
+\addtocounter{artSearch}{1}
+
+\ifnum \value{artCounter}=\value{artSearch}
 \emojiC
 \fi
-\ifnum \value{artCounter}=3
+\addtocounter{artSearch}{1}
+
+\ifnum \value{artCounter}=\value{artSearch}
 \comartSmileA
 \fi
-\ifnum \value{artCounter}=4
+\addtocounter{artSearch}{1}
+
+\ifnum \value{artCounter}=\value{artSearch}
 \comartSmileB
 \fi
-\ifnum \value{artCounter}=5
+\addtocounter{artSearch}{1}
+
+\ifnum \value{artCounter}=\value{artSearch}
 \comartSmileC
 \fi
-\ifnum \value{artCounter}=6
+\addtocounter{artSearch}{1}
+
+\ifnum \value{artCounter}=\value{artSearch}
 \comartSmileD
 \fi
-\ifnum \value{artCounter}=7
+\addtocounter{artSearch}{1}
+
+\ifnum \value{artCounter}=\value{artSearch}
 \comartSmileE
 \fi
+\addtocounter{artSearch}{1}
+
+\ifnum \value{artCounter}=\value{artSearch}
+\taukunn
+\fi
+\addtocounter{artSearch}{1}
+
+\ifnum \value{artCounter}=\value{artSearch}
+\taukunnSononi
+\fi
+\addtocounter{artSearch}{1}
+
+\ifnum \value{artCounter}=\value{artSearch}
+\sigumakunn
+\fi
+\addtocounter{artSearch}{1}
+
+\ifnum \value{artCounter}=\value{artSearch}
+\upsilonkunn
+\fi
+\addtocounter{artSearch}{1}
+
+\ifnum \value{artCounter}=\value{artSearch}
+\upsilonobake
+\fi
+\addtocounter{artSearch}{1}
+
 \addtocounter{artCounter}{1}
-\ifnum \value{artCounter}=8
+\ifnum \value{artCounter}=\value{artSearch}
 \setcounter{artCounter}{0}
 \fi
 }}
@@ -121,6 +167,60 @@ Sa\arrow[rrrr,shorten=5em,yshift=1.5mm,leftrightarrow,bend right]\arrow[rruu]\&\
 \end{center}
 }}
 
+\newcommand{\taukunn}{{
+\begin{center}
+\begin{tikzpicture}
+\node at (-1em,0) {(}; 
+\node at (1em,0) {)}; 
+\node at (0,0) {$\cdot\tau\cdot$}; 
+\node[scale=0.5] at (0,-0.5em) {\smile}; 
+\end{tikzpicture}
+\end{center}
+}}
+
+\newcommand{\taukunnSononi}{{
+\begin{center}
+\begin{tikzpicture}
+\node at (-1em,0) {(}; 
+\node at (1em,0) {)}; 
+\node at (0,0) {$\cdot\tau\cdot$}; 
+\node[scale=0.5] at (0,-0.5em) {\frown}; 
+\end{tikzpicture}
+\end{center}
+}}
+
+\newcommand{\sigumakunn}{{
+\begin{center}
+\begin{tikzpicture}
+\node[scale=1.2] at (-1em,-0.1em) {(}; 
+\node[scale=1.2] at (1em,-0.1em) {)}; 
+\node[scale=1.3] at (0,0) {$\hat{}$\ \ $\hat{}$}; 
+\node at (0,-0.5em) {$\sigma$}; 
+\end{tikzpicture}
+\end{center}
+}}
+
+\newcommand{\upsilonkunn}{{
+\begin{center}
+\begin{tikzpicture}
+\node[scale=1.2] at (-1em,-0.1em) {(}; 
+\node[scale=1.2] at (1em,-0.1em) {)}; 
+\node[scale=1.3] at (0,0) {$\hat{}$\ \ $\hat{}$}; 
+\node at (0,-0.5em) {$\upsilon$}; 
+\end{tikzpicture}
+\end{center}
+}}
+
+\newcommand{\upsilonobake}{{
+\begin{center}
+\begin{tikzpicture}
+\draw  [xshift=-55,yshift=25,yscale=-0.007,xscale=0.007, color={rgb, 255:red, 0; green, 0; blue, 0 }][line width=0.5] [line join = round][line cap = round] (198,243.5) .. controls (205.86,239.93) and (222.32,228.44) .. (231,231.5) .. controls (235.28,233.01) and (237.48,239.09) .. (242,239.5) .. controls (253.39,240.54) and (266.56,235.76) .. (277,237.5) .. controls (278.29,237.71) and (289.76,241.75) .. (292,242.5) .. controls (293.63,243.04) and (304.42,237.94) .. (310,238.5) .. controls (311.48,238.65) and (314.49,241.28) .. (316,241.5) .. controls (322.04,242.36) and (329.71,241.86) .. (335,244.5) .. controls (338.75,246.37) and (339.71,250.8) .. (346,247.5) .. controls (351.26,244.75) and (355.67,240.56) .. (360,236.5) .. controls (361.31,235.27) and (361.2,233.11) .. (362,231.5) .. controls (373.16,209.17) and (374.98,185.05) .. (357,164.5) .. controls (350.07,156.58) and (338.44,143.93) .. (338,132.5) .. controls (336.8,101.3) and (350.85,64.35) .. (326,39.5) .. controls (324.05,37.55) and (322.52,39.13) .. (320,38.5) .. controls (299.88,33.47) and (283.38,34.98) .. (264,38.5) .. controls (257.75,39.64) and (248.37,38.66) .. (243,42.5) .. controls (236.85,46.89) and (230.44,59) .. (228,63.5) .. controls (218.94,80.22) and (224.47,103.63) .. (220,121.5) .. controls (218.09,129.14) and (212.58,135.75) .. (210,143.5) .. controls (205.3,157.61) and (202.3,171.91) .. (201,187.5) .. controls (200.36,195.13) and (202.08,204.3) .. (199,211.5) .. controls (198.03,213.77) and (192.81,218.36) .. (192,219.5) .. controls (189.31,223.27) and (187.29,242.27) .. (189,244.5) .. controls (191.03,247.14) and (195.67,244.5) .. (199,244.5) ;
+\node[scale=0.7] at (0,0) {$\top$\ \ $\top$}; 
+\node[scale=1.2] at (0,-0.7em) {$\upsilon$}; 
+\end{tikzpicture}
+\end{center}
+}}
+
 \title{Notto - Category for the Working Mathematician}
 \author{tkunn}
 \date{August 2020}
@@ -135,97 +235,93 @@ This is solutions for problems on the second edition of \textit{Category for the
 
 \subsection{}
 
-\showArt
-
 \subsection{}
-
-\showArt
 
 \subsection{}
 
 \subsubsection{}
 
-TODO
+
 
 \subsubsection{}
 
-TODO
+
 
 \subsubsection{}
 
-TODO
+
 
 \subsubsection{}
 
-TODO
+
 
 \subsubsection{}
 
-TODO
+
 
 \subsection{}
 
 \subsubsection{}
 
-TODO
+
 
 \subsubsection{}
 
-TODO
+
 
 \subsubsection{}
 
-TODO
+
 
 \subsubsection{}
 
-TODO
+
 
 \subsubsection{}
 
-TODO
+
 
 \subsubsection{}
 
-TODO
+
 
 \subsection{}
 
 \subsubsection{}
 
-TODO
+
 
 \subsubsection{}
 
-TODO
+
 
 \subsubsection{}
 
-TODO
+
 
 \subsubsection{}
 
-TODO
+
 
 \subsubsection{}
 
-TODO
+
 
 \subsubsection{}
 
-TODO
+
 
 \subsubsection{}
 
-TODO
+
 
 \subsubsection{}
 
-TODO
+
 
 \subsubsection{}
 
-TODO
+
 
 \subsection{}
 
@@ -244,7 +340,7 @@ Let $U$ be a set that satisfies following conditions:
 
 \subsubsection{}
 
-
+\showArt
 
 For all $q \in \prod_i f_i$, we can construct a bijection $r : I \rightarrow q$. $q \subset U$ because $\forall w \in q,\ \exists j \in I,\ w \in f_j \in U$. Since $I \in U$ and $q \subset U$, we can say $q \in U$. Therefore $\prod_i f_i \subset U$.
 
@@ -265,21 +361,13 @@ Because $a \in U$ and $b \subset U$, we can apply $f$ to (a) to get $\bigcup_i f
 
 \subsection{}
 
-\showArt
-
 \subsection{}
-
-\showArt
 
 \section{}
 
 \subsection{}
 
-\showArt
-
 \subsection{}
-
-\showArt
 
 \subsection{}
 
@@ -317,7 +405,7 @@ Let the set of all object in $C$ be the product set $\prod_i C_i$ and $C(a, b) =
 
 \begin{enumerate}
 \item For every $i$ there is a functor $P_i : C \rightarrow C_i$.
-\item For every category $B$ such that a functor $G_i : B \rightarrow C_i$ presents for every $C_i$, there is a functor $F : B \rightarrow C$, which makes the following diagram commute.
+\item For every category $B$ such that a functor $G_i : B \rightarrow C_i$ presents for every $C_i$, there is a functor $F : B \rightarrow C$, which makes the following diagram commutative.
 
 \begin{center}
 \begin{tikzcd}[sep=4em]
@@ -364,7 +452,7 @@ Now we construct a functor $F : \mathbf{Top}^{\mathrm{op}} \rightarrow \mathbf{R
 
 
 
-TODO
+
 
 
 
@@ -400,7 +488,7 @@ An object of $\mathbf{Ab}^{\mathbf{N}}$ is a map on $\mathbb{N}$ to $\mathbf{Ab}
 
 \showArt
 
-Let $R, S : P \rightarrow Q$. Then $R$ and $S$ are objects of $Q^P$. Let $\tau$ be a natural transform $\tau : R\ \dot{\rightarrow}\ S$. $\tau$ is an arrow on $R$ to $S$ in $Q^P$. Since $\tau$ is natural and $P$ is preorder, following diagram is commute for every pair of objects $p, p^\prime \in P$. $a = f(p,\,p^\prime)$, where $f(p, p^\prime)$ is the only arrow on $p$ to $p^\prime$. Since $Q$ is preorder, $\tau p = g(Rp, Sp)$, where $g(Rp, Sp)$ is the only arrow on $Rp$ to $Sp$.
+Let $R, S : P \rightarrow Q$. Then $R$ and $S$ are objects of $Q^P$. Let $\tau$ be a natural transform $\tau : R\ \dot{\rightarrow}\ S$. $\tau$ is an arrow on $R$ to $S$ in $Q^P$. Since $\tau$ is natural and $P$ is preorder, the following diagram commutes for every pair of objects $p, p^\prime \in P$. $a = f(p,\,p^\prime)$, where $f(p, p^\prime)$ is the only arrow on $p$ to $p^\prime$. Since $Q$ is preorder, $\tau p = g(Rp, Sp)$, where $g(Rp, Sp)$ is the only arrow on $Rp$ to $Sp$.
 
 \begin{center}
 \begin{tikzcd}
@@ -432,16 +520,13 @@ Rx \arrow[d, swap, "Ra"] \arrow[r, "\tau x"] & Sx \arrow[d, "Sa"]\\
 Rx \arrow[r, "\tau x"] & Sx
 \end{tikzcd}
 \end{center}
-Therefore, $\hom(R, S) = \{\tau\ |\ \forall a,\ \tau x \circ R a = S a \circ \tau x\}$... what does it mean???? TODO
+From the diagram, $\hom(R, S) = \{\tau\ |\ \forall a,\ \tau x \circ R a = S a \circ \tau x\}$... what does it mean???? TODO
 
 \subsubsection{}
-TODO
 
 \subsubsection{}
-TODO
 
 \subsubsection{}
-TODO
 
 \subsection{}
 
@@ -453,11 +538,11 @@ symbols: A B C F S T
 
 We prove there is a bijection $F : \mathbf{Cat}(A \times B, C) \rightarrow \mathbf{Cat}(A, C^B)$.
 
-Let $FT = S$, where $T : A \times B \rightarrow C$ and $S : A \rightarrow C^B$. First, we make the object function of $S$. Given $a \in A$, we make a subcategory $a \subseteq A$, a category of an object $a$ and an arrow $\mathrm{id}(a)$. Trivially, there is a functor $f_a : B \rightarrow a \times B$ ($f_a(b) = \langle a, b \rangle$ for objects, $f_a(b) = \langle \mathrm{id}(a), b \rangle$ for arrows). As $a \times B \subseteq A \times B$, now we define $Sa : B \rightarrow C$, $Sa = T \circ f_a$. Second, we make the arrow function of $S$. Let $Sa = \tau$, where $a : a_1 \rightarrow a_2$ is an arrow in $A$, $\tau : S a_1\ \dot{\rightarrow}\ S a_2$, $\tau b = T\langle a, \mathrm{id}(b) \rangle$. Let $g : b_1 \rightarrow b_2$ is an arrow in $B$. Then $Sa_2g(\tau b_1(Sa_1b_1)) = Sa_2b_2 = \tau b_2(Sa_1g (Sa_1b_1))$. Thus $\tau$ is natural.
+Let $FT = S$, where $T : A \times B \rightarrow C$ and $S : A \rightarrow C^B$. First, we make the object function of $S$. Given $a \in A$, we make a subcategory $a \subseteq A$, a category of an object $a$ and an arrow $\mathrm{id}(a)$. Trivially, there is a functor $f_a : B \rightarrow a \times B$ ($f_a(b) = \langle a, b \rangle$ for objects, $f_a(b) = \langle \mathrm{id}(a), b \rangle$ for arrows). As $a \times B \subseteq A \times B$, now we define $Sa : B \rightarrow C$ as $Sa = T \circ f_a$. Second, we make the arrow function of $S$. Let $Sa = \tau$, where $a : a_0 \rightarrow a_1$ is an arrow in $A$, $\tau : S a_0\ \dot{\rightarrow}\ S a_1$, $\tau b = T\langle a, \mathrm{id}(b) \rangle$. Let $g : b_0 \rightarrow b_1$ is an arrow in $B$. Then $Sa_1g(\tau b_0(Sa_0b_0)) = Sa_1b_1 = \tau b_1(Sa_0g (Sa_0b_0))$. Thus $\tau$ is natural.
 
-Next, we prove for all $S : A \rightarrow C^B$, there exists $T : A \times B \rightarrow C$, such that $FT = S$. First, we prove for the object function of $T$. We define $T\langle a, b \rangle = Sab$. $FTab = T\langle a, b \rangle$, thus $FT = S$. Second, we prove for the arrow function. Let $T\langle a, b \rangle = Sa(\mathrm{dom}(b))$. Then $FTab = Sab$ for any arrow $a$ in $A$, object $b \in B$.
+Next, we prove for all $S : A \rightarrow C^B$, there exists $T : A \times B \rightarrow C$, such that $FT = S$. First, we prove it for the object function of $T$. We define $T\langle a, b \rangle = Sab$. $FTab = T\langle a, b \rangle$, thus $FT = S$. Second, we prove it for the arrow function. Let $T\langle a, b \rangle = Sa(\mathrm{dom}(b))$. Then $FTab = Sab$ for any arrow $a$ in $A$, object $b \in B$, thus $FT = S$.
 
-Finally, we prove that for all $T_1,\ T_2 : A \times B \rightarrow C$, if $FT_1 = FT_2$, then $T_1 = T_2$. Let $FT_1 = FT_2$ and $n \in \{1,\ 2\}$. We write $T_=\langle x, y \rangle$ when $T_1\langle x, y \rangle = T_2\langle x, y \rangle$. First, for all $a \in A$, $b \in B$, $FT_nab = T_n\langle a, b \rangle$. Thus $T_=\langle a, b \rangle$. Second, for every object $a \in A$, arrow $b$ in $B$, $FT_nab = T_n\langle \mathrm{id}(a), b \rangle$. For every arrow $a$ in $A$, object $b \in B$, $FT_nab = T_n\langle a, \mathrm{id}(b) \rangle$. Now, let $a : a_1 \rightarrow a_2$ is any arrow in $A$, $b : b_1 \rightarrow b_2$ is any arrow in $B$. Then $T_=\langle \mathrm{id}(a_1), b \rangle$, $T_=\langle a, \mathrm{id}(b_2)\rangle$ and $T_=(\langle \mathrm{id}(a_1), b \rangle \circ \langle a, \mathrm{id}(b_2) \rangle)$. Thus $T_=\langle a, b \rangle$.
+Finally, we prove that for all $T_0,\ T_1 : A \times B \rightarrow C$, if $FT_0 = FT_1$, then $T_0 = T_1$. Let $FT_0 = FT_1$ and $n \in \{0,\ 1\}$. We write $T_=\langle x, y \rangle$ when $T_0\langle x, y \rangle = T_1\langle x, y \rangle$. First, for all $a \in A$, $b \in B$, $FT_nab = T_n\langle a, b \rangle$. Thus $T_=\langle a, b \rangle$ (for objects). Second, for every object $a \in A$, arrow $b$ in $B$, $FT_nab = T_n\langle \mathrm{id}(a), b \rangle$, and, for every arrow $a$ in $A$, object $b \in B$, $FT_nab = T_n\langle a, \mathrm{id}(b) \rangle$. Now, let $a : a_0 \rightarrow a_1$ is any arrow in $A$ and $b : b_0 \rightarrow b_1$ is any arrow in $B$. $T_=\langle \mathrm{id}(a_0), b \rangle$ and $T_=\langle a, \mathrm{id}(b_1)\rangle$, thus $T_=(\langle \mathrm{id}(a_0), b \rangle \circ \langle a, \mathrm{id}(b_1) \rangle)$. Hence $T_=\langle a, b \rangle$ (for arrows).
 
 \subsubsection{}
 
@@ -482,6 +567,87 @@ Thus we can construct the arrow function $F(\tau) = \langle \tau_0, \tau_1 \rang
 \subsubsection{}
 
 \subsection{}
+
+\subsubsection{}
+
+\showArt
+
+(seems to be trivial...)
+
+In $\mathbf{CRng}$, $f : K \rightarrow L$ is a ring homomorphism on $K$ to $L$. Thus $K \downarrow \mathbf{CRng}$ is the category of all small commutative $K$-algebra.
+
+\subsubsection{}
+
+\showArt
+
+(seems to be trivial...)
+
+We make a functor $F : C \rightarrow (C \downarrow t)$. Since $t$ is a terminal object in $C$, for all object $c \in C$, there is a unique arrow $a_c : c \rightarrow t$. We use the arrow-making function $a_c$ as the object function of $F$. For any objects $c_0, c_1 \in C$, $|C(c_0, c_1)| = |(C \downarrow t)(a_{c_0}, a_{c_1})|$. Since $a_c$ is a bijection, both the object and arrow function of $F$ is bijective. Thus $C$ is isomorphic to $(C \downarrow t)$. 
+
+\subsubsection{}
+
+\showArt
+
+An alternative diagram for objects:
+
+\begin{center}
+\begin{tikzcd}
+  &    & t \arrow[mapsto, d, "t_2"]\arrow[mapsto, dll, swap, "t_0"]\arrow[mapsto, drr, "t_1"] \\
+e \arrow[mapsto, r, swap, "Te"] & Te & \arrow[mapsto, l, "\mathrm{dom}f"] f \arrow[mapsto, r, swap, "\mathrm{cod}f"] & Sd & \arrow[mapsto, l, "Sd"] d 
+\end{tikzcd}
+\end{center}
+
+A diagram for arrows:
+
+\begin{center}
+    \begin{tikzcd}
+      & &
+\langle k, h \rangle
+     \arrow[mapsto, d]\arrow[mapsto, dll, swap]\arrow[mapsto, drr] & &\\
+    k \arrow[mapsto, r, swap] & Tk & \arrow[mapsto, l]\langle Tk, Sh \rangle\arrow[mapsto, r, swap] & Sh & \arrow[mapsto, l] h
+    \end{tikzcd}
+\end{center}
+
+An alternative diagram for arrows:
+
+\begin{center}
+    \begin{tikzcd}
+      &    & t \arrow[mapsto, d, "\langle Tt_0{,} St_1 \rangle"]\arrow[mapsto, dll, swap, "t_0"]\arrow[mapsto, drr, "t_1"] \\
+    k \arrow[mapsto, r, swap, "Tk"] & Tk & \arrow[mapsto, l, "t^\prime_0"] t^\prime \arrow[mapsto, r, swap, "t^\prime_1"] & Sh & \arrow[mapsto, l, "Sh"] h
+    \end{tikzcd}
+\end{center}
+
+\subsubsection{}
+
+\showArt
+
+Let $T, S : D \rightarrow C$ be functors, $\tau : T\ \dot{\rightarrow}\ S$ be a natural transform, $\tau^\prime : D \rightarrow (T \downarrow S)$ be a functor such that $(\tau_d)_0 = (\tau_d)_1 = d$. Thus the object function maps an object $d \in D$ to $\langle d, d, Td \rightarrow Sd \rangle$. Then, for any arrow $g : d \rightarrow d^\prime$ in $D$, $f : Td \rightarrow Sd$ and $f^\prime : Td^\prime \rightarrow Sd^\prime$ in $C$, the following diagram commutes:
+
+\begin{center}
+    \begin{tikzcd}
+    Td \arrow[r, "f"] \arrow[d, "Tg"] & Sd \arrow[d, "Sg"]\\
+    Td^\prime \arrow[r, "f^\prime"] & Sd^\prime
+    \end{tikzcd}
+\end{center}
+
+This means that $\tau^\prime$ is a natural transform on $T$ to $S$.
+
+\subsubsection{}
+
+Let $E$, $C$, $D$, $X$ be categories, $P$, $Q$, $R$, $P^\prime$, $Q^\prime$, $R^\prime$, $T$, $S$ be functors. We prove that if the following diagram commutes, there is a functor $L : X \rightarrow (T \downarrow S)$ that keeps it commutative.
+
+\begin{center}
+    \begin{tikzcd}[row sep=4em, column sep=4em]
+      & & X
+     \arrow[d, "Q^\prime"]\arrow[dll, swap, "P^\prime"]\arrow[drr, "R^\prime"] & &\\
+    E \arrow[r] & C & \arrow[l]C^2\arrow[r, swap] & C & \arrow[l] D\\
+    & & (T \downarrow S)\arrow[u, "Q"]\arrow[ull, "P"]\arrow[urr, "R", swap]\arrow[dashed, bend right, swap, near start]{uu}[near start]{L}
+    \end{tikzcd}
+\end{center}
+
+
+
+\subsubsection{}
 
 \subsection{}
 
