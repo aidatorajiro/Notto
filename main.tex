@@ -4,7 +4,6 @@
 \usepackage{tikz-cd}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{calc}
 \input{arts.tex}
 
 \title{Notto}
@@ -451,6 +450,8 @@ Let $L_0, L_1 : X \rightarrow (T \downarrow S)$ be two functors which make the d
 
 \subsubsection{}
 
+\showArt
+
 \begin{enumerate}[label=(\alph*)]
   \item We make a functor $F : (C^E)^{\mathrm{op}} \times (C^D) \rightarrow \mathbf{Cat}$ with the object function $\langle T, S \rangle \mapsto (T \downarrow S)$. The arrow function of $F$ takes $\tau : T_1\ \dot{\rightarrow}\ T_0$ and $\sigma : S_0\ \dot{\rightarrow}\ S_1$ as arguments, where $T_0, T_1 \in C^E$ and $S_0, S_1 \in C^D$. $F$ returns a functor $G : (T_0 \downarrow S_0) \rightarrow (T_1 \downarrow S_1)$. We define $G$ by the object function $G\langle e, d, f \rangle = \langle e, d, \sigma d \circ f \circ \tau e \rangle$ and the arrow function $G\langle k, h \rangle = \langle k, h \rangle$.
   
@@ -466,10 +467,12 @@ Let $L_0, L_1 : X \rightarrow (T \downarrow S)$ be two functors which make the d
 
   And the arrow function $F(\upsilon_1) \circ F(\upsilon_0) = F(\upsilon_1 \circ \upsilon_0)$ is trivial. Thus there is a functor $F$ with the object function $\langle T, S \rangle \mapsto (T \downarrow S)$.
 
-  \item 
+  \item TODO
 \end{enumerate}
 
 \subsection{}
+
+
 
 \subsection{}
 

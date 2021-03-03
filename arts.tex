@@ -1,21 +1,38 @@
-\newcounter{artCounter}
-\setcounter{artCounter}{0}
 \newcounter{maxArts}
 \setcounter{maxArts}{0}
 
-\newcommand{\showLastArt}{\csname artsDef\romannumeral\the\numexpr\arabic{maxArts} - 1\relax\endcsname}
+\newcommand{\showLastArt}{\csname artsDef\roman{maxArts}\endcsname}
 
 \newcommand{\showArt}{
-\csname artsDef\roman{artCounter}\endcsname
-\addtocounter{artCounter}{1}
-\ifnum \value{artCounter}=\value{maxArts}
-\setcounter{artCounter}{0}
-\fi
+\csname artsDef\romannumeral\directlua{
+if artsList == nil then
+    artsList = {}
+end
+if artsSeed == nil then
+    artsSeed = 0
+end
+function mkArtsList()
+    artsSeed = artsSeed + 17
+    maxArts = \the\value{maxArts}
+    math.randomseed(1111 + artsSeed)
+    for i = 1,maxArts do
+        artsList[i] = i
+    end
+	for i = maxArts, 2, -1 do
+		local j = math.random(i)
+		artsList[i], artsList[j] = artsList[j], artsList[i]
+	end
+end
+if artsList[1] == nil then
+    mkArtsList()
+end
+tex.print(table.remove(artsList))
+}\endcsname
 }
 
 \newcommand{\registerArt}[1]{%
-\expandafter\newcommand\csname artsDef\roman{maxArts}\endcsname{#1}%
 \addtocounter{maxArts}{1}%
+\expandafter\newcommand\csname artsDef\roman{maxArts}\endcsname{#1}%
 }
 
 \registerArt{{
