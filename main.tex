@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[luatex]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{enumitem}
 \usepackage{tikz-cd}
@@ -7,7 +7,7 @@
 \usepackage{calc}
 \input{arts.tex}
 
-\title{Notto - Category for the Working Mathematician}
+\title{Notto}
 \author{tkunn}
 \date{August 2020}
 
@@ -15,15 +15,13 @@
 
 \maketitle
 
-\showLastArt
-
-This is solutions for problems on the second edition of \textit{Category for the Working Mathematician} by S. Mac Lane.
-
 \begin{center}
   \begin{tikzpicture}
   \draw[line width=0.5] [line join = round][line cap = round] (0,0) .. controls (0.5,0.5) and (0.0,1.0) .. (0.5,0.5) .. controls (1.0,0.0) .. (1.0,1.0);
   \end{tikzpicture}
 \end{center}
+
+This is solutions for problems on the second edition of \textit{Category for the Working Mathematician} by S. Mac Lane.
 
 \section{}
 
@@ -193,7 +191,7 @@ Let P, Q be preorders. $\forall a \forall b\ | \hom(a, b) | \leq 1$ for both P a
 
 \showArt
 
-Let $\mathrm{id}_X(a) : a \rightarrow a$ be identity in category $X$.
+Let $\mathrm{id}_X(a) : a \rightarrow a$ be an identity in the category $X$.
 
 Let the set of all object in $C$ be the product set $\prod_i C_i$ and $C(a, b) = \prod_i C_i(a_i, b_i)$. Let $\mathrm{id}_C(c)_i = \mathrm{id}_{C_i}(c_i)$ for all $c \in C$. Now, we prove $C$ has a universal property:
 
@@ -332,11 +330,11 @@ symbols: A B C F S T
 
 We prove there is a bijection $F : \mathbf{Cat}(A \times B, C) \rightarrow \mathbf{Cat}(A, C^B)$.
 
-Let $FT = S$, where $T : A \times B \rightarrow C$ and $S : A \rightarrow C^B$. First, we make the object function of $S$. Given $a \in A$, we make a subcategory $A_a \subseteq A$, a category of an object $a$ and an arrow $\mathrm{id}(a)$. Trivially, there is a functor $f_a : B \rightarrow A_a \times B$ ($f_a(b) = \langle a, b \rangle$ for objects, $f_a(b) = \langle \mathrm{id}(a), b \rangle$ for arrows). As $A_a \times B \subseteq A \times B$, now we define $Sa : B \rightarrow C$ as $Sa = T \circ f_a$. Second, we make the arrow function of $S$. Let $Sa = \tau$, where $a : a_0 \rightarrow a_1$ is an arrow in $A$, $\tau : S a_0\ \dot{\rightarrow}\ S a_1$, $\tau b = T\langle a, \mathrm{id}(b) \rangle$. Let $g : b_0 \rightarrow b_1$ be an arrow in $B$. Then $Sa_1g(\tau b_0(Sa_0b_0)) = Sa_1b_1 = \tau b_1(Sa_0g (Sa_0b_0))$. Thus $\tau$ is natural.
+Let $FT = S$, where $T : A \times B \rightarrow C$ and $S : A \rightarrow C^B$. First, we make the object function of $S$. Given $a \in A$, we make a subcategory $A_a \subseteq A$, a category of an object $a$ and an arrow $\mathrm{id}(a)$. There is a functor $f_a : B \rightarrow A_a \times B$ such that $f_a(b) = \langle a, b \rangle$ for objects, $f_a(b) = \langle \mathrm{id}(a), b \rangle$ for arrows. Since $A_a \times B \subseteq A \times B$, now we define $Sa : B \rightarrow C$ by $Sa = T \circ f_a$. Second, we make the arrow function of $S$. Let $Sa = \tau$, where $a : a_0 \rightarrow a_1$ is an arrow in $A$, $\tau : S a_0\ \dot{\rightarrow}\ S a_1$, $\tau b = T\langle a, \mathrm{id}(b) \rangle$. Let $g : b_0 \rightarrow b_1$ be an arrow in $B$. Then $Sa_1g(\tau b_0(Sa_0b_0)) = Sa_1b_1 = \tau b_1(Sa_0g (Sa_0b_0))$. Thus $\tau$ is natural.
 
 Next, we prove that for all $S : A \rightarrow C^B$, there exists $T : A \times B \rightarrow C$, such that $FT = S$. First, we prove it for the object function of $T$. Let $a \in A$, $b \in B$, $T\langle a, b \rangle = Sab$. $FTab = T\langle a, b \rangle$, thus $FT = S$. Second, we prove it for the arrow function. Let there be two arrows $a$ in $A$ and $b$ in $B$, and $T\langle a, b \rangle = Sa(\mathrm{dom}(b))$. Then $FTab = Sab$, thus $FT = S$.
 
-Finally, we prove that for all $T_0,\ T_1 : A \times B \rightarrow C$, if $FT_0 = FT_1$, then $T_0 = T_1$. Let $FT_0 = FT_1$ and $n \in \{0,\ 1\}$. We write $T_=\langle x, y \rangle$ when $T_0\langle x, y \rangle = T_1\langle x, y \rangle$. First, for all $a \in A$, $b \in B$, $FT_nab = T_n\langle a, b \rangle$. Thus $T_=\langle a, b \rangle$ (for objects). Second, for every object $a \in A$, arrow $b$ in $B$, $FT_nab = T_n\langle \mathrm{id}(a), b \rangle$, and, for every arrow $a$ in $A$, object $b \in B$, $FT_nab = T_n\langle a, \mathrm{id}(b) \rangle$. Now, let $a : a_0 \rightarrow a_1$ be any arrow in $A$ and $b : b_0 \rightarrow b_1$ be any arrow in $B$. $T_=\langle \mathrm{id}(a_0), b \rangle$ and $T_=\langle a, \mathrm{id}(b_1)\rangle$, thus $T_=(\langle \mathrm{id}(a_0), b \rangle \circ \langle a, \mathrm{id}(b_1) \rangle)$. Hence $T_=\langle a, b \rangle$ (for arrows).
+Finally, we prove that for all $T_0,\ T_1 : A \times B \rightarrow C$, if $FT_0 = FT_1$, then $T_0 = T_1$. Let $FT_0 = FT_1$ and $n \in \{0,\ 1\}$. We write $T_=\langle x, y \rangle$ when $T_0\langle x, y \rangle = T_1\langle x, y \rangle$. First, for all $a \in A$, $b \in B$, $FT_nab = T_n\langle a, b \rangle$. Thus $T_=\langle a, b \rangle$ (object equality). Second, for every object $a \in A$, arrow $b$ in $B$, $FT_nab = T_n\langle \mathrm{id}(a), b \rangle$, and, for every arrow $a$ in $A$, object $b \in B$, $FT_nab = T_n\langle a, \mathrm{id}(b) \rangle$. Now, let $a : a_0 \rightarrow a_1$ be any arrow in $A$ and $b : b_0 \rightarrow b_1$ be any arrow in $B$. $T_=\langle \mathrm{id}(a_0), b \rangle$ and $T_=\langle a, \mathrm{id}(b_1)\rangle$, thus $T_=(\langle \mathrm{id}(a_0), b \rangle \circ \langle a, \mathrm{id}(b_1) \rangle)$. Hence $T_=\langle a, b \rangle$ (arrow equality).
 
 \subsubsection{}
 
@@ -347,8 +345,6 @@ For any $x \in (A \times B)^C$, there are two functions $G(c) = x(c)_0$ and $H(c
 For any natural transform $\tau : (A \times B)\ \dot{\rightarrow}\ C$, there are two natural transforms $\tau_0 : A\ \dot{\rightarrow}\ C$ and $\tau_1 : B\ \dot{\rightarrow}\ C$. Let $\tau_0(x) = $ and $\tau_1(x) = $.
 
 Thus we can construct the arrow function $F(\tau) = \langle \tau_0, \tau_1 \rangle$.
-
-Let $L_0, L_1 : X \rightarrow (T \downarrow S)$ be two functors which makes the diagram commute.
 
 TODO
 
@@ -380,7 +376,7 @@ In $\mathbf{CRng}$, $f : K \rightarrow L$ is a ring homomorphism on $K$ to $L$. 
 
 (seems to be trivial...)
 
-We make a functor $F : C \rightarrow (C \downarrow t)$. Since $t$ is a terminal object in $C$, for all object $c \in C$, there is a unique arrow $a_c : c \rightarrow t$. We use the arrow-making function $a_c$ as the object function of $F$. For any objects $c_0, c_1 \in C$, $|C(c_0, c_1)| = |(C \downarrow t)(a_{c_0}, a_{c_1})|$. Since $a_c$ is a bijection, both the object and arrow function of $F$ is bijective. Thus $C$ is isomorphic to $(C \downarrow t)$. 
+We make a functor $F : C \rightarrow (C \downarrow t)$. Since $t$ is a terminal object in $C$, for all object $c \in C$, there is a unique arrow $a_c : c \rightarrow t$. We use the arrow-making function $a_c$ as the object function of $F$. For any objects $c_0, c_1 \in C$, $C(c_0, c_1) = (C \downarrow t)(a_{c_0}, a_{c_1})$. We use the identity as the arrow function. It is trivial that $F$ is a functor. Likewise, a functor $G : (C \downarrow t) \rightarrow C$ is established with the inverse of $a_c$ (object function) and the identity (arrow function). Therefore, $C$ is isomorphic to $(C \downarrow t)$. 
 
 \subsubsection{}
 
@@ -419,7 +415,7 @@ An alternative diagram for arrows:
 
 \showArt
 
-Let $T, S : D \rightarrow C$ be functors, $\tau : T\ \dot{\rightarrow}\ S$ be a natural transform, $\tau^\prime : D \rightarrow (T \downarrow S)$ be a functor such that $(\tau_d)_0 = (\tau_d)_1 = d$. Thus the object function maps an object $d \in D$ to $\langle d, d, Td \rightarrow Sd \rangle$. Then, for any arrow $g : d \rightarrow d^\prime$ in $D$, $f : Td \rightarrow Sd$ and $f^\prime : Td^\prime \rightarrow Sd^\prime$ in $C$, the following diagram commutes:
+Let $T, S : D \rightarrow C$ be two functors, $\tau : T\ \dot{\rightarrow}\ S$ be a natural transform, $\tau^\prime : D \rightarrow (T \downarrow S)$ be a functor such that $(\tau_d)_0 = (\tau_d)_1 = d$. Thus the object function maps an object $d \in D$ to $\langle d, d, Td \rightarrow Sd \rangle$. Then, for any arrow $g : d \rightarrow d^\prime$ in $D$, $f : Td \rightarrow Sd$ and $f^\prime : Td^\prime \rightarrow Sd^\prime$ in $C$, the following diagram commutes:
 
 \begin{center}
     \begin{tikzcd}
@@ -440,20 +436,38 @@ Let $E$, $C$, $D$, $X$ be categories, $P$, $Q$, $R$, $P^\prime$, $Q^\prime$, $R^
     \begin{tikzcd}[row sep=4em, column sep=4em]
       & & X　\arrow[dashed, bend right, swap]{dd}[near start]{L}
      \arrow[d, "Q^\prime"]\arrow[dll, swap, "P^\prime"]\arrow[drr, "R^\prime"] & &\\
-    E \arrow[r, "T"] & C & \arrow[l]C^2\arrow[r, swap] & C & \arrow[l, swap, "S"] D\\
+    E \arrow[r, "T"] & C & \arrow[l, swap, "C^{d_0}"]C^2\arrow[r, "C^{d_1}"] & C & \arrow[l, swap, "S"] D\\
     & & (T \downarrow S)\arrow[u, swap, "Q"]\arrow[ull, "P"]\arrow[urr, "R", swap]
     \end{tikzcd}
 \end{center}
 
-For any object $x \in X$, let $e^\prime = P^\prime x$, $d^\prime = R^\prime x$, $f^\prime = Q^\prime x$. Since (TODO), $f^\prime : Te^\prime \rightarrow Sd^\prime$. Thus $\langle P^\prime x, R^\prime x, Q^\prime x \rangle \in (T \downarrow S)$.
+For any object $x \in X$, let $e^\prime = P^\prime x$, $d^\prime = R^\prime x$, $f^\prime = Q^\prime x$. Since $TP^\prime = C^{d_0}Q^\prime$ and $SR^\prime = C^{d_1}Q^\prime$, $f^\prime : Te^\prime \rightarrow Sd^\prime$. Thus $\langle P^\prime x, R^\prime x, Q^\prime x \rangle \in (T \downarrow S)$.
 
-For any arrow $x : x_0 \rightarrow x_1$ in $X$, $Q^\prime x_0 \circ TP^\prime x = SR^\prime x \circ Q^\prime x_1$. Thus $\langle P^\prime x, R^\prime x \rangle$ is an arrow in $(T \downarrow S)$.
+For any arrow $x : x_0 \rightarrow x_1$ in $X$, $Q^\prime x_1 \circ TP^\prime x = SR^\prime x \circ Q^\prime x_0$. Thus $\langle P^\prime x, R^\prime x \rangle$ is an arrow in $(T \downarrow S)$. (TODO)
 
-Then we define the object function of L by $Lx = \langle P^\prime x, R^\prime x, Q^\prime x \rangle$ and the arrow function by $Lx = \langle P^\prime x, R^\prime x \rangle$. L is a functor, because $L(x) \circ L(y) = \langle P^\prime x, R^\prime x \rangle \circ \langle P^\prime y, R^\prime y \rangle = \langle P^\prime x \circ P^\prime y, R^\prime x \circ R^\prime y \rangle = \langle P^\prime (x \circ y), R^\prime (x \circ y) \rangle = L(x \circ y)$.
+Therefore we define the object function by $Lx = \langle P^\prime x, R^\prime x, Q^\prime x \rangle$ and the arrow function by $Lx = \langle P^\prime x, R^\prime x \rangle$. $L$ is a functor, because $L(x) \circ L(y) = \langle P^\prime x, R^\prime x \rangle \circ \langle P^\prime y, R^\prime y \rangle = \langle P^\prime x \circ P^\prime y, R^\prime x \circ R^\prime y \rangle = \langle P^\prime (x \circ y), R^\prime (x \circ y) \rangle = L(x \circ y)$, and $L\ \mathrm{id} = \langle P^\prime\ \mathrm{id}, R^\prime\ \mathrm{id} \rangle = \langle \mathrm{id}, \mathrm{id} \rangle = \mathrm{id}$.
 
-Let $L_0, L_1 : X \rightarrow (T \downarrow S)$ be two functors which makes the diagram commute. We prove $L_0 = L_1$. Indeed, (TODO)
+Let $L_0, L_1 : X \rightarrow (T \downarrow S)$ be two functors which make the diagram commute. Then $L_0 = L_1$. Indeed, (TODO)
 
 \subsubsection{}
+
+\begin{enumerate}[label=(\alph*)]
+  \item We make a functor $F : (C^E)^{\mathrm{op}} \times (C^D) \rightarrow \mathbf{Cat}$ with the object function $\langle T, S \rangle \mapsto (T \downarrow S)$. The arrow function of $F$ takes $\tau : T_1\ \dot{\rightarrow}\ T_0$ and $\sigma : S_0\ \dot{\rightarrow}\ S_1$ as arguments, where $T_0, T_1 \in C^E$ and $S_0, S_1 \in C^D$. $F$ returns a functor $G : (T_0 \downarrow S_0) \rightarrow (T_1 \downarrow S_1)$. We define $G$ by the object function $G\langle e, d, f \rangle = \langle e, d, \sigma d \circ f \circ \tau e \rangle$ and the arrow function $G\langle k, h \rangle = \langle k, h \rangle$.
+  
+  Then for any pair of arrows $\upsilon_0 = \langle \tau_0 : T_1 \rightarrow T_0,\ \sigma_0 : S_0 \rightarrow S_1\rangle$ and $\upsilon_1 = \langle \tau_1 : T_2 \rightarrow T_1,\ \sigma_1 : S_1 \rightarrow S_2\rangle$ in $(C^E)^\mathrm{op} \times (C^D)$, the object function $(F(\upsilon_1) \circ F(\upsilon_0))\langle e, d, f \rangle = \langle e, d, \sigma_1 d \circ \sigma_0 d \circ f \circ \tau_0 e \circ \tau_1 e \rangle = \langle e, d, (\sigma_1 \circ \sigma_0) d \circ f \circ (\tau_0 \circ \tau_1) e \rangle = (F(\upsilon_1 \circ \upsilon_0))\langle e, d, f \rangle$. In picture, 
+
+  \begin{center}
+    \begin{tikzcd}
+      T_0e\arrow[r, "f"] & S_0d \arrow[d, "\sigma_0d"]\\
+      T_1e\arrow[u, "\tau_0e"] & S_1e \arrow[d, "\sigma_1d"]\\
+      T_2e\arrow[u, "\tau_1e"] & S_2e
+    \end{tikzcd}
+  \end{center}
+
+  And the arrow function $F(\upsilon_1) \circ F(\upsilon_0) = F(\upsilon_1 \circ \upsilon_0)$ is trivial. Thus there is a functor $F$ with the object function $\langle T, S \rangle \mapsto (T \downarrow S)$.
+
+  \item 
+\end{enumerate}
 
 \subsection{}
 
