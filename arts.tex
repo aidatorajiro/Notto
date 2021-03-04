@@ -14,7 +14,7 @@ end
 function mkArtsList()
     artsSeed = artsSeed + 17
     maxArts = \the\value{maxArts}
-    math.randomseed(1111 + artsSeed)
+    math.randomseed(1111 + artsSeed*65536 + maxArts)
     for i = 1,maxArts do
         artsList[i] = i
     end
