@@ -279,12 +279,12 @@ An object of $\mathbf{Ab}^{\mathbf{N}}$ is a map on $\mathbb{N}$ to $\mathbf{Ab}
 
 \showArt
 
-Let $R, S : P \rightarrow Q$. Then $R$ and $S$ are objects of $Q^P$. Let $\tau$ be a natural transform $\tau : R\ \dot{\rightarrow}\ S$. $\tau$ is an arrow on $R$ to $S$ in $Q^P$. Since $\tau$ is natural and $P$ is preorder, the following diagram commutes for every pair of objects $p, p^\prime \in P$. $a = f(p,\,p^\prime)$, where $f(p, p^\prime)$ is the only arrow on $p$ to $p^\prime$. Since $Q$ is preorder, $\tau p = g(Rp, Sp)$, where $g(Rp, Sp)$ is the only arrow on $Rp$ to $Sp$.
+Let $R, S : P \rightarrow Q$. Then $R$ and $S$ are objects of $Q^P$. Let $\tau$ be a natural transform $\tau : R\ \dot{\rightarrow}\ S$. $\tau$ is an arrow on $R$ to $S$ in $Q^P$. Since $\tau$ is natural and $P$ is preorder, the following diagram commutes for every pair of objects $p, p' \in P$. $a = f(p,\,p')$, where $f(p, p')$ is the only arrow on $p$ to $p'$. Since $Q$ is preorder, $\tau p = g(Rp, Sp)$, where $g(Rp, Sp)$ is the only arrow on $Rp$ to $Sp$.
 
 \begin{center}
 \begin{tikzcd}
 Rp \arrow[d, swap, "{Ra}"] \arrow[r, "{\tau p}"] & Sp \arrow[d, "{Sa}"]\\
-Rp^\prime \arrow[r, "{\tau p^\prime}"] & Sp^\prime
+Rp' \arrow[r, "{\tau p'}"] & Sp'
 \end{tikzcd}
 \end{center}
 
@@ -406,7 +406,7 @@ An alternative diagram for arrows:
 \begin{center}
     \begin{tikzcd}
       &    & t \arrow[mapsto, d, "\langle Tt_0{,} St_1 \rangle"]\arrow[mapsto, dll, swap, "t_0"]\arrow[mapsto, drr, "t_1"] \\
-    k \arrow[mapsto, r, swap, "Tk"] & Tk & \arrow[mapsto, l, "t^\prime_0"] t^\prime \arrow[mapsto, r, swap, "t^\prime_1"] & Sh & \arrow[mapsto, l, "Sh"] h
+    k \arrow[mapsto, r, swap, "Tk"] & Tk & \arrow[mapsto, l, "t'_0"] t' \arrow[mapsto, r, swap, "t'_1"] & Sh & \arrow[mapsto, l, "Sh"] h
     \end{tikzcd}
 \end{center}
 
@@ -414,37 +414,37 @@ An alternative diagram for arrows:
 
 \showArt
 
-Let $T, S : D \rightarrow C$ be two functors, $\tau : T\ \dot{\rightarrow}\ S$ be a natural transform, $\tau^\prime : D \rightarrow (T \downarrow S)$ be a functor such that $(\tau_d)_0 = (\tau_d)_1 = d$. Thus the object function maps an object $d \in D$ to $\langle d, d, Td \rightarrow Sd \rangle$. Then, for any arrow $g : d \rightarrow d^\prime$ in $D$, $f : Td \rightarrow Sd$ and $f^\prime : Td^\prime \rightarrow Sd^\prime$ in $C$, the following diagram commutes:
+Let $T, S : D \rightarrow C$ be two functors, $\tau : T\ \dot{\rightarrow}\ S$ be a natural transform, $\tau' : D \rightarrow (T \downarrow S)$ be a functor such that $(\tau_d)_0 = (\tau_d)_1 = d$. Thus the object function maps an object $d \in D$ to $\langle d, d, Td \rightarrow Sd \rangle$. Then, for any arrow $g : d \rightarrow d'$ in $D$, $f : Td \rightarrow Sd$ and $f' : Td' \rightarrow Sd'$ in $C$, the following diagram commutes:
 
 \begin{center}
     \begin{tikzcd}
     Td \arrow[r, "f"] \arrow[d, "Tg"] & Sd \arrow[d, "Sg"]\\
-    Td^\prime \arrow[r, "f^\prime"] & Sd^\prime
+    Td' \arrow[r, "f'"] & Sd'
     \end{tikzcd}
 \end{center}
 
-This means that $\tau^\prime$ is a natural transform on $T$ to $S$.
+This means that $\tau'$ is a natural transform on $T$ to $S$.
 
 \subsubsection{}
 
 \showArt
 
-Let $E$, $C$, $D$, $X$ be categories, $P$, $Q$, $R$, $P^\prime$, $Q^\prime$, $R^\prime$, $T$, $S$ be functors. We prove that if the following diagram commutes, there is a unique functor $L : X \rightarrow (T \downarrow S)$ that keeps it commute.
+Let $E$, $C$, $D$, $X$ be categories, $P$, $Q$, $R$, $P'$, $Q'$, $R'$, $T$, $S$ be functors. We prove that if the following diagram commutes, there is a unique functor $L : X \rightarrow (T \downarrow S)$ that keeps it commute.
 
 \begin{center}
     \begin{tikzcd}[row sep=4em, column sep=4em]
       & & X　\arrow[dashed, bend right, swap]{dd}[near start]{L}
-     \arrow[d, "Q^\prime"]\arrow[dll, swap, "P^\prime"]\arrow[drr, "R^\prime"] & &\\
+     \arrow[d, "Q'"]\arrow[dll, swap, "P'"]\arrow[drr, "R'"] & &\\
     E \arrow[r, "T"] & C & \arrow[l, swap, "C^{d_0}"]C^2\arrow[r, "C^{d_1}"] & C & \arrow[l, swap, "S"] D\\
     & & (T \downarrow S)\arrow[u, swap, "Q"]\arrow[ull, "P"]\arrow[urr, "R", swap]
     \end{tikzcd}
 \end{center}
 
-For any object $x \in X$, let $e^\prime = P^\prime x$, $d^\prime = R^\prime x$, $f^\prime = Q^\prime x$. Since $TP^\prime = C^{d_0}Q^\prime$ and $SR^\prime = C^{d_1}Q^\prime$, $f^\prime : Te^\prime \rightarrow Sd^\prime$. Thus $\langle P^\prime x, R^\prime x, Q^\prime x \rangle \in (T \downarrow S)$.
+For any object $x \in X$, let $e' = P' x$, $d' = R' x$, $f' = Q' x$. Since $TP' = C^{d_0}Q'$ and $SR' = C^{d_1}Q'$, $f' : Te' \rightarrow Sd'$. Thus $\langle P' x, R' x, Q' x \rangle \in (T \downarrow S)$.
 
-For any arrow $x : x_0 \rightarrow x_1$ in $X$, $Q^\prime x_1 \circ TP^\prime x = SR^\prime x \circ Q^\prime x_0$. Thus $\langle P^\prime x, R^\prime x \rangle$ is an arrow in $(T \downarrow S)$. (TODO)
+For any arrow $x : x_0 \rightarrow x_1$ in $X$, $Q' x_1 \circ TP' x = SR' x \circ Q' x_0$. Thus $\langle P' x, R' x \rangle$ is an arrow in $(T \downarrow S)$. (TODO)
 
-Therefore we define the object function by $Lx = \langle P^\prime x, R^\prime x, Q^\prime x \rangle$ and the arrow function by $Lx = \langle P^\prime x, R^\prime x \rangle$. $L$ is a functor, because $L(x) \circ L(y) = \langle P^\prime x, R^\prime x \rangle \circ \langle P^\prime y, R^\prime y \rangle = \langle P^\prime x \circ P^\prime y, R^\prime x \circ R^\prime y \rangle = \langle P^\prime (x \circ y), R^\prime (x \circ y) \rangle = L(x \circ y)$, and $L\ \mathrm{id} = \langle P^\prime\ \mathrm{id}, R^\prime\ \mathrm{id} \rangle = \langle \mathrm{id}, \mathrm{id} \rangle = \mathrm{id}$.
+Therefore we define the object function by $Lx = \langle P' x, R' x, Q' x \rangle$ and the arrow function by $Lx = \langle P' x, R' x \rangle$. $L$ is a functor, because $L(x) \circ L(y) = \langle P' x, R' x \rangle \circ \langle P' y, R' y \rangle = \langle P' x \circ P' y, R' x \circ R' y \rangle = \langle P' (x \circ y), R' (x \circ y) \rangle = L(x \circ y)$, and $L\ \mathrm{id} = \langle P'\ \mathrm{id}, R'\ \mathrm{id} \rangle = \langle \mathrm{id}, \mathrm{id} \rangle = \mathrm{id}$.
 
 Let $L_0, L_1 : X \rightarrow (T \downarrow S)$ be two functors which make the diagram commute. Then $L_0 = L_1$. Indeed, (TODO)
 
@@ -467,11 +467,19 @@ Let $L_0, L_1 : X \rightarrow (T \downarrow S)$ be two functors which make the d
 
   And the arrow function $F(\upsilon_1) \circ F(\upsilon_0) = F(\upsilon_1 \circ \upsilon_0)$ is trivial. Thus there is a functor $F$ with the object function $\langle T, S \rangle \mapsto (T \downarrow S)$.
 
-  \item TODO
+  \item TODO come back later ...
 \end{enumerate}
 
 \subsection{}
 
+\subsubsection{}
+
+Let $G, G'$ is a graph of the same set of objects $O$ and the set of arrows $A, A'$. Make a function $D : \mathbf{Grph} \rightarrow \mathbf{Grph}$ from the object function $D_O : O \rightarrow O$ and the arrow function $D_A : A \rightarrow A'$. Define $D_O = \mathrm{id}$, $D_A f : \mathrm{cod} f \rightarrow \mathrm{dom} f$, and $D_A f \circ D_A g = D_A (g \circ f)$ for all $f, g \in A$. The $D_O$ and $D_A$
+
+\subsubsection{}
+
+
+\subsubsection{}
 
 
 \subsection{}
