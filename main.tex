@@ -508,7 +508,7 @@ For a finite ordinal number $n$, let $G_n$ be a graph with the objects $n$, the 
 
 \showArt
 
-We make a free groupoid $F$ from a graph $G$ as follows. Map every object $o \in G$ to $o \in F$. For each arrow $a : a_0 \rightarrow a_1$ in $G$, map $a$ to the two arrows in $F$, $a$ and $a^{-1} : a_1 \rightarrow a_0$ such that $a \circ a^{-1} = a^{-1} \circ a = \mathrm{id}$. Then map any composable arrows (i.e. paths) in $G$ to $F$. We call the mapping $P' : \mathbf{Grph} \rightarrow \mathbf{Grpd}$, where $\mathbf{Grpd}$ is the set of all groupoids.
+We make a free groupoid $F$ from a graph $G$ as follows. Map every object $o \in G$ to $o \in F$. For each arrow $a : a_0 \rightarrow a_1$ in $G$, map $a$ to the two arrows in $F$, $a$ and $a^{-1} : a_1 \rightarrow a_0$ such that $a \circ a^{-1} = \mathrm{id}$, $a^{-1} \circ a = \mathrm{id}$. Then add all composable arrows (i.e. paths) in $F$ to $F$. We call the mapping $P' : \mathbf{Grph} \rightarrow \mathbf{Grpd}$, where $\mathbf{Grpd}$ is the set of all groupoids.
 
 $P = U \circ P'$ satisfies the following universal property: given any groupoid $E$ and graph morphism $D$, there is a unique functor $D'$ that makes the diagram commute.
 
